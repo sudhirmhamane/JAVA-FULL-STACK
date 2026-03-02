@@ -2,37 +2,37 @@ SQL> select \* from emp;
 
 
 
-&nbsp;    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
 
 ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
 
-&nbsp;     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
 
-&nbsp;     7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+     7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
 
-&nbsp;     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
 
-&nbsp;     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
 
-&nbsp;     7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+     7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
 
-&nbsp;     7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+     7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
 
-&nbsp;     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
 
-&nbsp;     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
 
-&nbsp;     7839 KING       PRESIDENT            17-NOV-81       5000                    10
+     7839 KING       PRESIDENT            17-NOV-81       5000                    10
 
-&nbsp;     7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+     7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
 
-&nbsp;     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
 
-&nbsp;     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
 
-&nbsp;     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
 
-&nbsp;     7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+     7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
 
 
 
@@ -44,7 +44,7 @@ SQL> -- 11)  WAQTD EMPLOYEES NAME FROM EMPLOYEES TABLE ?
 
 SQL> select ename
 
-&nbsp; 2  from emp;
+ 2  from emp;
 
 
 
@@ -90,41 +90,41 @@ SQL> -- WAQTD SAL AND EMPLOYEES NAME FROM EMPLOYEE TABLE ?
 
 SQL> select sal, ename
 
-&nbsp; 2  from emp;
+ 2  from emp;
 
 
 
-&nbsp;      SAL ENAME
+      SAL ENAME
 
 ---------- ----------
 
-&nbsp;      800 SMITH
+      800 SMITH
 
-&nbsp;     1600 ALLEN
+     1600 ALLEN
 
-&nbsp;     1250 WARD
+     1250 WARD
 
-&nbsp;     2975 JONES
+     2975 JONES
 
-&nbsp;     1250 MARTIN
+     1250 MARTIN
 
-&nbsp;     2850 BLAKE
+     2850 BLAKE
 
-&nbsp;     2450 CLARK
+     2450 CLARK
 
-&nbsp;     3000 SCOTT
+     3000 SCOTT
 
-&nbsp;     5000 KING
+     5000 KING
 
-&nbsp;     1500 TURNER
+     1500 TURNER
 
-&nbsp;     1100 ADAMS
+     1100 ADAMS
 
-&nbsp;      950 JAMES
+      950 JAMES
 
-&nbsp;     3000 FORD
+     3000 FORD
 
-&nbsp;     1300 MILLER
+     1300 MILLER
 
 
 
@@ -136,13 +136,13 @@ SQL> -- WAQTD NAME AND DEPTNO AND JOBS THAT ARE PRESENT IN EMP TABLE ?
 
 SQL> select ename, deptno, job
 
-&nbsp; 2  from student;
+ 2  from student;
 
 
 
 SQL> select ename, deptno, job
 
-&nbsp; 2  from emp;
+ 2  from emp;
 
 
 
@@ -190,7 +190,7 @@ SQL> -- 14) WAQTD HIREDATE AND DEPTNO FOR ALL THE EMPLOYEES ?
 
 SQL> select hiredate, deptno 
 
-&nbsp; 2  from emp;
+ 2  from emp;
 
 
 
@@ -236,41 +236,41 @@ SQL> -- 15) WAQTD MGR AND EMPNO FROM EMPLOYEE TABLE ?
 
 SQL> select mgr, empno
 
-&nbsp; 2  from emp;
+ 2  from emp;
 
 
 
-&nbsp;      MGR      EMPNO
+      MGR      EMPNO
 
 ---------- ----------
 
-&nbsp;     7902       7369
+     7902       7369
 
-&nbsp;     7698       7499
+     7698       7499
 
-&nbsp;     7698       7521
+     7698       7521
 
-&nbsp;     7839       7566
+     7839       7566
 
-&nbsp;     7698       7654
+     7698       7654
 
-&nbsp;     7839       7698
+     7839       7698
 
-&nbsp;     7839       7782
+     7839       7782
 
-&nbsp;     7566       7788
+     7566       7788
 
-&nbsp;                7839
+                7839
 
-&nbsp;     7698       7844
+     7698       7844
 
-&nbsp;     7788       7876
+     7788       7876
 
-&nbsp;     7698       7900
+     7698       7900
 
-&nbsp;     7566       7902
+     7566       7902
 
-&nbsp;     7782       7934
+     7782       7934
 
 
 
@@ -282,41 +282,41 @@ SQL> -- 16) WAQTD ALL THE DETAILS OF ALL THE EMPLOYEES ?
 
 SQL> select \* 
 
-&nbsp; 2  from emp;
+ 2  from emp;
 
 
 
-&nbsp;    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
 
 ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
 
-&nbsp;     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
 
-&nbsp;     7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+     7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
 
-&nbsp;     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
 
-&nbsp;     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
 
-&nbsp;     7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+     7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
 
-&nbsp;     7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+     7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
 
-&nbsp;     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
 
-&nbsp;     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
 
-&nbsp;     7839 KING       PRESIDENT            17-NOV-81       5000                    10
+     7839 KING       PRESIDENT            17-NOV-81       5000                    10
 
-&nbsp;     7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+     7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
 
-&nbsp;     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
 
-&nbsp;     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
 
-&nbsp;     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
 
-&nbsp;     7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+     7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
 
 
 
@@ -328,7 +328,7 @@ SQL> -- 17) WAQTD DEPARTMENT NAME FROM DEPT TABLE ?
 
 SQL> select job
 
-&nbsp; 2  from emp;
+ 2  from emp;
 
 
 
@@ -376,21 +376,21 @@ SQL> -- 18) WAQTD LOC THAT ARE PRESENT IN DEPT TABLE
 
 SQL> select \* 
 
-&nbsp; 2  from dept;
+ 2  from dept;
 
 
 
-&nbsp;   DEPTNO DNAME          LOC
+   DEPTNO DNAME          LOC
 
 ---------- -------------- -------------
 
-&nbsp;       10 ACCOUNTING     NEW YORK
+       10 ACCOUNTING     NEW YORK
 
-&nbsp;       20 RESEARCH       DALLAS
+       20 RESEARCH       DALLAS
 
-&nbsp;       30 SALES          CHICAGO
+       30 SALES          CHICAGO
 
-&nbsp;       40 OPERATIONS     BOSTON
+       40 OPERATIONS     BOSTON
 
 
 
@@ -398,7 +398,7 @@ SQL> -- 17) WAQTD DEPARTMENT NAME FROM DEPT TABLE ?
 
 SQL> select dname
 
-&nbsp; 2  from dept;
+ 2  from dept;
 
 
 
@@ -420,21 +420,21 @@ SQL> -- 20) WAQTD ALL THE DETAILS OF DEPT TABLE ?
 
 SQL> select \* 
 
-&nbsp; 2  from dept;
+ 2  from dept;
 
 
 
-&nbsp;   DEPTNO DNAME          LOC
+   DEPTNO DNAME          LOC
 
 ---------- -------------- -------------
 
-&nbsp;       10 ACCOUNTING     NEW YORK
+       10 ACCOUNTING     NEW YORK
 
-&nbsp;       20 RESEARCH       DALLAS
+       20 RESEARCH       DALLAS
 
-&nbsp;       30 SALES          CHICAGO
+       30 SALES          CHICAGO
 
-&nbsp;       40 OPERATIONS     BOSTON
+       40 OPERATIONS     BOSTON
 
 
 
@@ -442,41 +442,41 @@ SQL> -- 21) WAQTD DIFFERENT JOBS PRESENT IN EMPLOYEE TABLE ?
 
 SQL> select \*
 
-&nbsp; 2  from emp;
+ 2  from emp;
 
 
 
-&nbsp;    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
 
 ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
 
-&nbsp;     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
 
-&nbsp;     7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+     7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
 
-&nbsp;     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
 
-&nbsp;     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
 
-&nbsp;     7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+     7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
 
-&nbsp;     7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+     7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
 
-&nbsp;     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
 
-&nbsp;     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
 
-&nbsp;     7839 KING       PRESIDENT            17-NOV-81       5000                    10
+     7839 KING       PRESIDENT            17-NOV-81       5000                    10
 
-&nbsp;     7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+     7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
 
-&nbsp;     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
 
-&nbsp;     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
 
-&nbsp;     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
 
-&nbsp;     7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+     7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
 
 
 
@@ -486,7 +486,7 @@ SQL> select \*
 
 SQL> select job
 
-&nbsp; 2  from emp;
+ 2  from emp;
 
 
 
@@ -532,7 +532,7 @@ SQL> --  WAQTD ENAME AND SAL PRESENT IN EMP TABLE BUT THERE SHOULD NOT BE ANY RE
 
 SQL> select unique ename, sal
 
-&nbsp; 2  from emp;
+ 2  from emp;
 
 
 
@@ -578,7 +578,7 @@ SQL> -- 23) WAQTD HIREDATE AND SAL OF AN EMPLOYEES BUT THERE SHOULD NOT BE ANY R
 
 SQL> select unique hiredate, sal
 
-&nbsp; 2  from emp;
+ 2  from emp;
 
 
 
@@ -632,39 +632,558 @@ SQL> \*/
 
 SQL> select unique sal, deptno
 
-&nbsp; 2  from emp;
+ 2  from emp;
 
 
 
-&nbsp;      SAL     DEPTNO
+      SAL     DEPTNO
 
 ---------- ----------
 
-&nbsp;     5000         10
+     5000         10
 
-&nbsp;     1300         10
+     1300         10
 
-&nbsp;     1600         30
+     1600         30
 
-&nbsp;     1250         30
+     1250         30
 
-&nbsp;     2450         10
+     2450         10
 
-&nbsp;     3000         20
+     3000         20
 
-&nbsp;      800         20
+      800         20
 
-&nbsp;     2850         30
+     2850         30
 
-&nbsp;     1500         30
+     1500         30
 
-&nbsp;     1100         20
+     1100         20
 
-&nbsp;      950         30
+      950         30
 
-&nbsp;     2975         20
+     2975         20
 
 
 
 12 rows selected.
 
+SQL> /* 25) WAQTD ALL THE DETAILS OF AN EMPLOYEES BUT 
+SQL>     THERE SHOULD NOT BE ANY REPEATED RECORDS ?
+SQL> */
+SQL> SELECT * 
+  2  
+SQL> 
+SQL> SELECT DISTINCT *
+  2  FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+
+14 rows selected.
+
+SQL> SELECT * FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+14 rows selected.
+
+SQL> /* 26) WAQTD ANNUAL SALARY FOR ALL THE EMPLOYEES ? 
+SQL> */
+SQL> SELECT *
+  2  
+SQL> SELECT SAL * 12 "ANNUAL SALARY"
+  2  FROM EMP;
+
+ANNUAL SALARY
+-------------
+         9600
+        19200
+        15000
+        35700
+        15000
+        34200
+        29400
+        36000
+        60000
+        18000
+        13200
+        11400
+        36000
+        15600
+
+14 rows selected.
+
+SQL> -- 27) WAQTD HALF TERM SALARY FOR ALL THE EMPLOYEES ?
+SQL> SELECT SAL * 6
+  2  FROM EMP;
+
+     SAL*6
+----------
+      4800
+      9600
+      7500
+     17850
+      7500
+     17100
+     14700
+     18000
+     30000
+      9000
+      6600
+      5700
+     18000
+      7800
+
+14 rows selected.
+
+SQL> -- 28) WAQTD ENAME AND ANNUAL SALARY FOR ALL THE EMPLOYEES ?
+SQL> SELECT ENAME, SAL*12 "ANNUAL SAL"
+  2  FROM EMP;
+
+ENAME      ANNUAL SAL
+---------- ----------
+SMITH            9600
+ALLEN           19200
+WARD            15000
+JONES           35700
+MARTIN          15000
+BLAKE           34200
+CLARK           29400
+SCOTT           36000
+KING            60000
+TURNER          18000
+ADAMS           13200
+JAMES           11400
+FORD            36000
+MILLER          15600
+
+14 rows selected.
+
+SQL> -- 29) WAQTD DEPTNO JOB AND SAL WITH 10% HIKE FOR ALL THE EMPLOYEE ?
+SQL> SELECT DEPTNO, JOB, SAL+SAL*0.1
+  2  FROM EMP;
+
+    DEPTNO JOB       SAL+SAL*0.1
+---------- --------- -----------
+        20 CLERK             880
+        30 SALESMAN         1760
+        30 SALESMAN         1375
+        20 MANAGER        3272.5
+        30 SALESMAN         1375
+        30 MANAGER          3135
+        10 MANAGER          2695
+        20 ANALYST          3300
+        10 PRESIDENT        5500
+        30 SALESMAN         1650
+        20 CLERK            1210
+        30 CLERK            1045
+        20 ANALYST          3300
+        10 CLERK            1430
+
+14 rows selected.
+
+SQL> -- 30) WAQTD ALL THE DETAILS OF AN EMPLOYEES ALONG WITH ANNUAL SALARY ?
+SQL> SELECT EMP.*, SAL*12 "ANNUAL SALARY"
+  2  FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO ANNUAL SALARY
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- -------------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20          9600
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30         19200
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30         15000
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20         35700
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30         15000
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30         34200
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10         29400
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20         36000
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10         60000
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30         18000
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20         13200
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30         11400
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20         36000
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10         15600
+
+14 rows selected.
+
+SQL> -- 31) WAQTDALL THE DETAILS OF AN EMPLOYEES ALONG WITH 
+SQL>     10% HIKE IN ANNUAL SALARY FOR ALL THE EMPLOYEE ?
+SP2-0734: unknown command beginning "10% HIKE I..." - rest of line ignored.
+SQL> SELECT EMP.*, SAL+SAL*0.1*12 "10% HIKE IN ANN SAL"
+  2  FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO 10% HIKE IN ANN SAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- --------------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20                1760
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30                3520
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30                2750
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20                6545
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30                2750
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30                6270
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10                5390
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20                6600
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10               11000
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30                3300
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20                2420
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30                2090
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20                6600
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10                2860
+
+14 rows selected.
+
+SQL> SELECT EMP.*, SAL*12+(SAL+SAL*0.1) "ANN SAL 10% HIKE"
+  2  FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO ANN SAL 10% HIKE
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- --------------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20            10480
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30            20960
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30            16375
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20          38972.5
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30            16375
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30            37335
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10            32095
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20            39300
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10            65500
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30            19650
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20            14410
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30            12445
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20            39300
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10            17030
+
+14 rows selected.
+
+SQL> SELECT EMP.* SAL*12 + SAL*12*0.1 "ANN 10% HIKE SAL"
+  2  FROM EMP;
+SELECT EMP.* SAL*12 + SAL*12*0.1 "ANN 10% HIKE SAL"
+             *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> SELECT EMP.*, SAL*12+(SAL+SAL*0.1*12) "10 HIKE ANN"
+  2  FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO 10 HIKE ANN
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- -----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20       11360
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30       22720
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30       17750
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20       42245
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30       17750
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30       40470
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10       34790
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20       42600
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10       71000
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30       21300
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20       15620
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30       13490
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20       42600
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10       18460
+
+14 rows selected.
+
+SQL> SELECT EMP.*, SAL*12 + SAL*12*0.1 "10% HIKE IN AS"
+  2  FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO 10% HIKE IN AS
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- --------------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20          10560
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30          21120
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30          16500
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20          39270
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30          16500
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30          37620
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10          32340
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20          39600
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10          66000
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30          19800
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20          14520
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30          12540
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20          39600
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10          17160
+
+14 rows selected.
+
+SQL> /* 32) WAQTD SAL ANNAUL SALARY HALF_TERM SALARY AND QUERTER TERM SALARY 
+SQL>     FOR ALL THE EMPLOYEES ?
+SQL> */
+SQL> SELECT SAL, SAL*12 "ANNUAL SAL", SAL*6 "HALF_TERM SAL", SAL *3 "QUERTER_TERM SAL"
+  2  FROM EMP;
+
+       SAL ANNUAL SAL HALF_TERM SAL QUERTER_TERM SAL
+---------- ---------- ------------- ----------------
+       800       9600          4800             2400
+      1600      19200          9600             4800
+      1250      15000          7500             3750
+      2975      35700         17850             8925
+      1250      15000          7500             3750
+      2850      34200         17100             8550
+      2450      29400         14700             7350
+      3000      36000         18000             9000
+      5000      60000         30000            15000
+      1500      18000          9000             4500
+      1100      13200          6600             3300
+       950      11400          5700             2850
+      3000      36000         18000             9000
+      1300      15600          7800             3900
+
+14 rows selected.
+
+SQL> -- 33) WAQTD ANNUAL SALARY WITH 20% DEDUCTION  FOR ALL THE EMPLOYEES ?
+SQL> SELECT SAL*12 - SAL*12*0.2 "20% DEC AS"
+  2  FROM EMP;
+
+20% DEC AS
+----------
+      7680
+     15360
+     12000
+     28560
+     12000
+     27360
+     23520
+     28800
+     48000
+     14400
+     10560
+      9120
+     28800
+     12480
+
+14 rows selected.
+
+SQL> -- 34) WAQTD ALL THE DETAILS ALONG WITH 100 RS PENALTY FOR ALL THE EMPLOYEES ?
+SQL> SELECT EMP.*, SAL-100
+  2  FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO    SAL-100
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20        700
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30       1500
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30       1150
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20       2875
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30       1150
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30       2750
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10       2350
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20       2900
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10       4900
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30       1400
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20       1000
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30        850
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20       2900
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10       1200
+
+14 rows selected.
+
+SQL> -- 35) WAQTD TOTAL SALARY NEEDED TO PAY FOR EACH AND EVERY EMPLOYEE ?
+SQL> SELECT SAL
+  2  FROM EMP;
+
+       SAL
+----------
+       800
+      1600
+      1250
+      2975
+      1250
+      2850
+      2450
+      3000
+      5000
+      1500
+      1100
+       950
+      3000
+      1300
+
+14 rows selected.
+
+SQL> SELECT SUM(SAL)
+  2  FROM EMP;
+
+  SUM(SAL)
+----------
+     29025
+
+SQL> -- 36) WAQTD ANNAUL SALARY  AND HALF_TERM SALARY WITH ALIAS NAME 
+SQL>     FOR ALL THE EMPLOYEES ?
+SP2-0734: unknown command beginning "FOR ALL TH..." - rest of line ignored.
+SQL> SELECT SAL*12 "ANNUAL SAL", SAL*6 "HALF_TERM SAL"
+  2  FROM EMP;
+
+ANNUAL SAL HALF_TERM SAL
+---------- -------------
+      9600          4800
+     19200          9600
+     15000          7500
+     35700         17850
+     15000          7500
+     34200         17100
+     29400         14700
+     36000         18000
+     60000         30000
+     18000          9000
+     13200          6600
+     11400          5700
+     36000         18000
+     15600          7800
+
+14 rows selected.
+
+SQL> /*
+SQL> 37) WAQTD ALL THE DETAILS OF AN EMPLOYEES ALONG WITH 12% HIKE 
+SQL>     IN ANNUAL SALARY WITH ALIAS NAME FOR ALL THE EMPLOYEES 
+SQL> */
+SQL> SELECT EMP.*, SAL*12 + SAL*12*0.12 "HIKE OF 12% IN ANN SAL"
+  2  FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO HIKE OF 12% IN ANN SAL
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- --------------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20                  10752
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30                  21504
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30                  16800
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20                  39984
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30                  16800
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30                  38304
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10                  32928
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20                  40320
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10                  67200
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30                  20160
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20                  14784
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30                  12768
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20                  40320
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10                  17472
+
+14 rows selected.
+
+SQL> /* 38) WAQTD JOB AS DESIGNATION HIREDATE AS JOINING DATE MGR AS 
+SQL>     REPORTING MANAGER NUMBER FOR ALL THE EMPLOYEES ?
+SQL> */
+SQL> SELECT 38) WAQTD JOB AS DESIGNATION HIREDATE AS JOINING DATE MGR AS 
+  2      REPORTING MANAGER NUMBER FOR ALL THE EMPLOYEES ?
+  3  
+SQL> SELECT JOB "DESIGNATION", HIREDATE "JOINING DATE", MGR "REPORTING MANAGER NUMBER"
+  2  FROM EMP;
+
+DESIGNATI JOINING D REPORTING MANAGER NUMBER
+--------- --------- ------------------------
+CLERK     17-DEC-80                     7902
+SALESMAN  20-FEB-81                     7698
+SALESMAN  22-FEB-81                     7698
+MANAGER   02-APR-81                     7839
+SALESMAN  28-SEP-81                     7698
+MANAGER   01-MAY-81                     7839
+MANAGER   09-JUN-81                     7839
+ANALYST   19-APR-87                     7566
+PRESIDENT 17-NOV-81
+SALESMAN  08-SEP-81                     7698
+CLERK     23-MAY-87                     7788
+CLERK     03-DEC-81                     7698
+ANALYST   03-DEC-81                     7566
+CLERK     23-JAN-82                     7782
+
+14 rows selected.
+
+SQL> /*
+SQL> 39) WAQTD JOB  WITH DEPTNO FOR ALL THE EMPLOYEES USING ALIAS AS
+SQL>     DESIGNATION FOR THE JOB AND DNO FOR THE DEPTNO ?
+SQL> */
+SQL> SELECT JOB "DESOGNATION", DEPTNO "DNO"
+  2  FROM EMP;
+
+DESOGNATI        DNO
+--------- ----------
+CLERK             20
+SALESMAN          30
+SALESMAN          30
+MANAGER           20
+SALESMAN          30
+MANAGER           30
+MANAGER           10
+ANALYST           20
+PRESIDENT         10
+SALESMAN          30
+CLERK             20
+CLERK             30
+ANALYST           20
+CLERK             10
+
+14 rows selected.
+
+SQL> /*
+SQL> 40) WAQTD ALL THE DETAILS OF AN EMPLOYEES ALONG WITH 
+SQL>     50 RS HIKE IN SAL USE ALIAS AS BONUS FOR ALL THE EMPLOYEE ?
+SQL> */
+SQL> SELECT EMP.*, SAL*50 "BONUS"
+  2  FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO      BONUS
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20      40000
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30      80000
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30      62500
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20     148750
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30      62500
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30     142500
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10     122500
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20     150000
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10     250000
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30      75000
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20      55000
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30      47500
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20     150000
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10      65000
+
+14 rows selected.
+
+SQL> SELECT EMP.*, SAL+50 "BONUS"
+  2  FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO      BONUS
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20        850
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30       1650
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30       1300
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20       3025
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30       1300
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30       2900
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10       2500
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20       3050
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10       5050
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30       1550
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20       1150
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30       1000
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20       3050
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10       1350
+
+14 rows selected.

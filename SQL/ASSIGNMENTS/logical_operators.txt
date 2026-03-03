@@ -1,0 +1,320 @@
+SQL> -- >>>>>>>>>>> ASSIGNMENT ON LOGICAL OPERATOR >>>>>>>>>>
+SQL> /*
+SQL> 61) WAQTD ALL THE DETAILS OF THE EMPLOYEES WHO ARE WORKING IN DEPTNO
+SQL>      10 AND 20?
+SQL> */
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE DEPTNO = 10 OR DEPTNO = 20;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+8 rows selected.
+
+SQL> /*
+SQL> 62) WAQTD ALL THE DETAILS OF THE EMPLOYEES  WHO ARE WORKING 
+SQL>      AS MANAGER AND SALESMAN ?
+SQL> */
+
+SQL> SELECT * 
+  2  FROM EMP
+  3  WHERE JOB = 'MANAGER' OR JOB = 'SALESMAN';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+
+7 rows selected.
+
+SQL> /*
+SQL> 63) WAQTD ALL THE DETAILS OF THE EMPLOYEES  WHOSE SAL IS MORE THEN 
+SQL>       1000 AND LESS THEN 5000 ?
+SQL> */
+SQL> 
+SQL> SELECT * 
+  2  FROM 
+  3  EMP
+  4  WHERE SAL > 1000 AND SAL < 5000;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+11 rows selected.
+
+SQL> /*
+SQL> 64) WAQTD ALL THE DETAILS OF THE EMPLOYEES  WHOSE DEPTNO IS 20
+SQL>      AND WORKING AS MANAGER ?
+SQL> */
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE DEPTNO = 20 AND JOB = 'MANAGER';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+
+SQL> /*
+SQL> 65) WAQTD ALL THE EMPLOYEE NAME AND SALARY WHO HIRED AFTER 81
+SQL>       INTO DEPTNO 10 ?
+SQL> */
+SQL> SELECT ENAME, SAL
+  2  FROM EMP
+  3  WHERE HIREDATE > '31-DEC-81';
+
+ENAME             SAL
+---------- ----------
+SCOTT            3000
+ADAMS            1100
+MILLER           1300
+
+SQL> /*
+SQL> 66) WAQTD ALL THE DETAILS OF THE EMPLOYEES  WHOSE NAME IS 
+SQL>       KING AND SCOTT ?
+SQL> */
+SQL> 
+
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE ENAME = 'KING' OR ENAME = 'SCOTT';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+
+SQL> /*
+SQL> 67) WAQTD ALL THE DETAILS OF THE EMPLOYEES  WHOSE SAL IS 
+SQL>       3000 AND 5000 ?
+SQL> */
+SQL> 
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE SAL = 3000 OR SAL = 5000;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+SQL> /*
+SQL> 68) WAQTD ALL THE DETAILS OF THE EMPLOYEES  WHO ARE WORKING IN DEPTNO      
+SQL>       10 AS MANAGER AND HIRED ON '17-DEC-82 ?
+SQL> */
+SQL> 
+
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE DEPTNO = 10 AND JOB = 'MANAGER' AND HIREDATE = '17-DEC-82';
+
+no rows selected
+
+SQL> /*
+SQL> 69) WAQTD ALL THE DETAILS OF THE EMPLOYEES WHO ARE WORKING AS 
+SQL>       PRESIDENT IN DEPTNO 10 AND HAVING SALARY OF 5000 ?
+SQL> */
+SQL> 
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE JOB = 'PRESIDENT' AND DEPTNO = 10 AND SAL = 5000;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+
+SQL> /*
+SQL> 70) WAQTD ALL THE DETAILS OF THE EMPLOYEES  WORKING IN DEPTNO 10,20
+SQL>       AS MANAGER ?
+SQL> */
+SQL> 
+SQL> SELECT * 
+  2  FROM EMP
+  3  WHERE (DEPTNO = 10 OR DEPTNO = 20) AND JOB = 'MANAGER';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+
+SQL> /*
+SQL> 71) WAQTD ALL THE EMPLOYEES NAME AND JOB FOR  THE EMPLOYEES
+SQL>     WHO HIRED AFTER 81 AND BEFORE 87 ?
+SQL> */
+SQL> 
+
+SQL> SELECT ENAME, JOB, HIREDATE
+  2  FROM EMP
+  3  WHERE HIREDATE >= '01-JAN-82' AND HIREDATE < '01-JAN-87';
+
+ENAME      JOB       HIREDATE
+---------- --------- ---------
+MILLER     CLERK     23-JAN-82
+
+SQL> /*
+SQL> 72) WAQTD ALL THE DETAILS OF THE EMPLOYEES  WHOSE SALARY ARE MORE THEN   
+SQL>      1000 AND LESS THEN 5000 IN DEPTNO 20 ?
+SQL> */
+SQL> 
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE SAL > 1000 AND SAL < 5000 AND DEPTNO = 20;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+SQL> /*
+SQL> 73) WAQTD ALL THE DETAILS OF THE OF THE EMPLOYEES WHO ARE WORKING AS        
+SQL>      MANAGER IN DEPTNO 20 AND 10AND EARNING COMMISIONS 400,1600 ?
+SQL> */
+SQL> 
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE JOB = 'MANAGER' AND (DEPTNO = 20 OR DEPTNO = 10) AND (COMM = 400 OR COMM = 1600);
+
+no rows selected
+
+SQL> /*
+SQL> 74) WAQTD ENAME AND ANNAUL SALARY WITH ALISAS NAME FOR THE                  
+SQL>     E MPLOYEES WHOSE ANNUAL SALARY IS MORE THEN 800 IN DEPTNO 30 WORKING   AS SALESMAN AND HIRE
+D BEFORE THE 88 ?
+SQL> */
+SQL> 
+SQL> SELECT ENAME, SAL * 12 "ANNUAL SAL"
+  2  FROM EMP
+  3  WHERE SAL * 12 > 800 AND DEPTNO = 30 AND JOB = 'SALESMAN' AND HIREDATE < '01-JAN-88';
+
+ENAME      ANNUAL SAL
+---------- ----------
+ALLEN           19200
+WARD            15000
+MARTIN          15000
+TURNER          18000
+
+SQL> /*
+SQL> 75) WAQTD ENAME AS A DEPTNO AS B AND JOB AS C FOR THE EMPLOYEES WHOSE COMM IS MORE THE 100 IN D
+EPTNO 10,20,30 ?
+SQL> */
+SQL> 
+SQL> SELECT ENAME "A", DEPTNO "B", JOB "C"
+  2  FROM EMP
+  3  WHERE COMM > 100 AND (DEPTNO = 10 OR DEPTNO = 20 OR DEPTNO = 30);
+
+A                   B C
+---------- ---------- ---------
+ALLEN              30 SALESMAN
+WARD               30 SALESMAN
+MARTIN             30 SALESMAN
+
+SQL> /*
+SQL> 76) WAQTD ALL THE DETAILS FOR THE EMPLOYEEES WHOSE HIREDATE ARE '03-DEC-81' AND '17DEC-81' INTO
+ DEPTNO 30 
+SQL> */
+SQL> 
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE (HIREDATE = '03-DEC-81' OR HIREDATE = '17-DEC-81') AND DEPTNO = 30;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+SQL> /*
+SQL> 77) WAQTD JOB AND SALARY FOR THE EMPLOYEES WHOSE COMM IS LESS THEN 2000 AND SALARIES ARE MORE T
+HEN 1000 IN DEPTNO 10, 20?
+SQL> */
+SQL> SELECT JOB, SAL
+  2  FROM EMP
+  3  WHERE COMM < 2000 AND SAL > 1000 AND (DEPTNO = 10 OR DEPTNO = 20);
+
+no rows selected
+
+SQL> /*
+SQL> 78) WAQTD ALL THE DEATILS  FOR THE EMPLOYEES WHOSE NAMES ARE KING AND SMITH AND ALLEN ?
+SQL> */
+SQL> 
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE ENAME = 'KING' OR ENAME = 'SMITH' OR ENAME = 'ALLEN';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+
+SQL> /*
+SQL> 79) WAQTD ANNUAL SALARY HALF TERM SALARY WITH 25% DEDUCTION IN THE SALARY FOR THE EMPLOYEES WHO
+SE ANNUAL SALARY IS MORE THEN 6000 ?
+SQL> */
+SQL> 
+SQL> SELECT SAL * 12 , SAL * 6 , (SAL-SAL*0.25)*12
+  2  FROM EMP
+  3  WHERE SAL * 12 > 6000;
+
+    SAL*12      SAL*6 (SAL-SAL*0.25)*12
+---------- ---------- -----------------
+      9600       4800              7200
+     19200       9600             14400
+     15000       7500             11250
+     35700      17850             26775
+     15000       7500             11250
+     34200      17100             25650
+     29400      14700             22050
+     36000      18000             27000
+     60000      30000             45000
+     18000       9000             13500
+     13200       6600              9900
+     11400       5700              8550
+     36000      18000             27000
+     15600       7800             11700
+
+14 rows selected.
+
+SQL> /*
+SQL> 80) ALL THE DETAILS AND HALF TERM SALARY FOR SALESMAN AND MANAGER IN DEPTNO 10,30 ?
+SQL> */
+SQL> 
+SQL> SELECT EMP.*, SAL * 6
+  2  FROM EMP
+  3  WHERE (JOB = 'SALESMAN' OR JOB = 'MANAGER') AND (DEPTNO = 10 OR DEPTNO = 30);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO      SAL*6
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30       9600
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30       7500
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30       7500
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30      17100
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10      14700
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30       9000
+
+6 rows selected.

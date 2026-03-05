@@ -35,3 +35,57 @@ In the like operator to create pattern the two special charactors are used.
 
 ### Note: 
 Like and not like are uninary operators.
+
+---
+
+### questions on like and not like special operators:
+
+1. WAQTD all the details of emp, the emp whos name start with A.
+
+Answer:
+
+select *
+from emp
+where ename like 'A%';
+
+---
+
+2. WAQTD all the details of emp, the emp who's name ends with R.
+
+Answer:
+
+select * 
+from emp
+where ename like '%R';
+
+---
+
+3. WAQTD all the details of emp, the emp who's name having A charactor.
+
+Answer:
+
+select *
+from emp
+where ename like '%A%';
+
+---
+
+4. WAQTD all the details of emp the emp who's name start with M and having 3rd char R and ends with N
+
+Answer:
+
+select *
+from emp
+where ename 'M_R%N';
+
+---
+
+5. WAQTD all the details of emp, except the emp whos name start with A
+
+Answer:
+
+select *
+from emp
+where ename not like 'A%';
+
+---

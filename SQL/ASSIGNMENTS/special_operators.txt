@@ -246,3 +246,139 @@ SELECT *
       7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
       7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
 
+ /*
+ 93) WAQTD ALL THE DETAILS OF THE OF THE EMPLOYEES WHO ARE WORKING AS        
+      MANAGER IN DEPTNO 20 AND 10AND EARNING COMMISIONS 400,1600 ?
+ */
+ 
+ select *
+  2  from emp
+  3  where job = 'MANAGER' and deptno in(10, 20) and comm in (400, 1600);
+
+no rows selected
+
+ set lines 1000 pages 10000
+ select *
+  2  from emp where job = 'MANAGER' and deptno in(10, 20) or comm in(400, 1600);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+
+ /*
+ 94) WAQTD ENAME AND ANNAUL SALARY WITH ALISAS NAME FOR THE                    
+   E MPLOYEES WHOSE ANNUAL SALARY IS MORE THEN 800 IN DEPTNO 30 WORKING AS SALESMAN AND HIRED BE
+FORE THE 88 ?
+ */
+ 
+ select ename, sal * 12 "annual sal"
+  2  from emp
+  3  where sal * 12 > 800 or deptno in (30) or job in ('SALESMAN') and hiredate < '01-JAN-88';
+
+ENAME      annual sal
+---------- ----------
+SMITH            9600
+ALLEN           19200
+WARD            15000
+JONES           35700
+MARTIN          15000
+BLAKE           34200
+CLARK           29400
+SCOTT           36000
+KING            60000
+TURNER          18000
+ADAMS           13200
+JAMES           11400
+FORD            36000
+MILLER          15600
+
+14 rows selected.
+
+ select *
+  2  from emp
+  3  where sal * 12 > 800
+  4  and deptno in (30)
+  5  and job = 'MANAGER'
+  6  and hiredate < '01-JAN-88';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+
+ /*
+ 95) WAQTD ENAME AS A DEPTNO AS B AND JOB AS C FOR THE EMPLOYEES WHOSE COMM IS MORE THE 100 IN D
+EPTNO 10,20,30 ?
+ */
+ 
+ select ename "A", deptno "B", job "C"
+  2  from emp
+  3  where comm > 100
+  4  and deptno in (10, 20, 30);
+
+A                   B C
+---------- ---------- ---------
+ALLEN              30 SALESMAN
+WARD               30 SALESMAN
+MARTIN             30 SALESMAN
+
+ /*
+ 96) WAQTD ALL THE DETAILS FOR THE EMPLOYEEES WHOSE HIREDATE ARE '03-DEC-81' AND '17DEC-81' INTO
+ DEPTNO 30 ?
+ */
+ 
+
+ select *
+  2  from emp
+  3  where hiredate in ('03-DEC-81', '17-DEC-81')
+  4  and deptno in (30);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+ /*
+ 97) WAQTD JOB AND SALARY FOR THE EMPLOYEES WHOSE COMM IS LESS THEN 2000 AND SALARIES ARE MORE T
+HEN 1000 IN DEPTNO 10, 20?*/
+ 
+ select job, sal
+  2  from emp
+  3  where comm < 2000
+  4  and sal > 1000
+  5  and deptno in (10, 20);
+
+no rows selected
+
+ /* 98) WAQTD ENAME FOR THE EMPLOYEES WHOSE NAMES ARE KING AND SMITH AND ALLEN ? */
+ 
+ select ename 
+  2  from emp
+  3  where ename in ('KING', 'SMITH', 'ALLEN');
+
+ENAME
+----------
+SMITH
+ALLEN
+KING
+
+ -- 100) ALL THE DETAILS AND HALF TERM SALARY FOR SALESMAN AND MANAGER IN DEPTNO 10,30 ?
+ 
+ select *
+  2  from emp
+  3  
+ 
+ select emp.*, sal * 6 "HTS"
+  2  from emp
+  3  where job in ('SALESMAN', 'MANAGER')
+  4  and deptno in (10, 30);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO        HTS
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30       9600
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30       7500
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30       7500
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30      17100
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10      14700
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30       9000
+
+6 rows selected.

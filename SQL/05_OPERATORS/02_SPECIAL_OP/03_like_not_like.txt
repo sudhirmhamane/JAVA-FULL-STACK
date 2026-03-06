@@ -1,0 +1,286 @@
+--- <<<< LIKE and NOT LIKE >>>> --
+
+-- 1. WAQTD all the details of emp, the emp who's name start with A and B.
+
+select *
+  2  from emp
+  3  where ename like 'A%'
+  4  or ename like '%B';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+
+-- 2. WAQTD all the details of emp except all the emp, the emp whos name start with A, B
+select *
+  2  from emp
+  3  where ename not like ('A%')
+  4  and ename not like ('B%');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+11 rows selected.
+
+-- 3. WAQTD all the details of emp, the emp whos name having 3rd char as L and ends with R
+
+select *
+  2  from emp
+  3  where ename like '__L%R';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+-- 4. WAQTD all the details, the emp whos name start with vowels.
+
+select *
+  2  from emp
+  3  where ename like ('A%')
+  4  and ename like ('E%')
+  5  and enama like ('I%')
+  6   and enama like ('O%')
+  7  
+select *
+  2  from emp
+  3  where ename like ('A%')
+  4  and ename like ('E%')
+  5  and ename like ('I%')
+  6  and ename like ('O%')
+  7  and ename like ('U%');
+
+no rows selected
+
+select * 
+  2  from emp
+  3  where ename like ('A%')
+  4  or ename like ('E%')
+  5  or ename like ('I%')
+  6  or ename like ('O%')
+  7  or ename like ('U%');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+
+-- 5. WAQTD all the details of emp, the emp whos name start with consonents
+
+select *
+  2  from emp
+  3  where ename not like ('A%')
+  4  and ename not like ('E%')
+  5  and ename not like ('I%')
+  6  and ename not like ('O%')
+  7  and ename not like ('U%');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+12 rows selected.
+
+-- 6. WAQTD all the details of emp the emp whos job having 'MAN'
+
+select *
+  2  from emp
+  3  where job like '%MAN%';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+
+7 rows selected.
+
+-- WAQTD all the details of emp, the emp who are earning 3 digits of sal.
+select *
+  2  from emp
+  3  where sal like '___';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+-- 7. WAQTD all the details of emp, the emp who hired in month of jan.
+
+select *
+  2  from emp
+  3  where hiredate like '__-JAN-__';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+select *
+  2  from emp
+  3  where hiredate like '%JAN%';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+select *
+  2  from emp
+  3  where hiredate like '%JAN-%';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+-- 8 WAQTD all the details, the emp who are wokinng in dept no 10, 20 and having reporting mana
+ger and the emp name is having 3rd char as consonent and earning 4 digit sal, except all the salesma
+n and manager
+
+select *
+  2  from emp
+  3  where deptno in (10,20)
+  4  and mgr is not NULL
+  5  and job not in ('SALESMAN', 'MANAGER')
+  6  and sal like ('____')
+  7  and  ename not like ('__A%')
+  8  and  ename not like ('__E%')
+  9  and  ename not like ('__I%')
+ 10  and  ename not like ('__O%')
+ 11  and  ename not like ('__U%');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+-- 9. WAQTD all the details of emp, along with AS, 10 incr in actual sal, total yoe, the emp wh
+os annual sal more than 30000 in deptno 10, 20, 30 and the emp who's comm are not null, woking as sa
+lesman, president, analyst except all the emp the emp whos name 1 and last char are consonents.
+
+  select emp.*, sal * 12 "Annual SAL", sal + sal * 0.1 "10% hike in SAL"
+  2    from emp
+  3    where sal > 30000 
+  4    and deptno in (10,20,30)
+  5    and comm is not NULL
+  6    and job in ('SALESMAN', 'PRESIDENT', 'ANALYST')
+  7   and ename not like ('A%E')
+  8   and ename not like ('A%I')
+  9   and ename not like ('A%O')
+ 10   and ename not like ('A%U')
+ 11   and ename not like ('A%A')
+ 12   and ename not like ('E%E')
+ 13  and ename not like ('E%A')
+ 14  and ename not like ('E%I')
+ 15  and ename not like ('E%O')
+ 16  and ename not like ('E%U')
+ 17  and ename not like ('I%A')
+ 18  and ename not like ('I%E')
+ 19  and ename not like ('I%I')
+ 20  and ename not like ('I%O')
+ 21  and ename not like ('I%U')
+ 22  and ename not like ('O%A')
+ 23  and ename not like ('O%E')
+ 24  and ename not like ('O%I')
+ 25  and ename not like ('O%O')
+ 26  and ename not like ('O%U')
+ 27  and ename not like ('U%A')
+ 28  and ename not like ('U%E')
+ 29  and ename not like ('U%I')
+ 30  and ename not like ('U%O')
+ 31  and ename not like ('U%U');
+
+no rows selected
+
+select emp.*, sal * 12 "Annual SAL", sal + sal * 0.1 "10% hike in SAL"
+  2  from emp
+  3  where sal * 12 > 30000
+  4     and deptno in (10,20,30)
+  5     and comm is not NULL
+  6     and job in ('SALESMAN', 'PRESIDENT', 'ANALYST')
+  7    and ename not like ('A%E')
+  8    and ename not like ('A%I')
+  9    and ename not like ('A%O')
+ 10    and ename not like ('A%U')
+ 11    and ename not like ('A%A')
+ 12    and ename not like ('E%E')
+ 13   and ename not like ('E%A')
+ 14   and ename not like ('E%I')
+ 15   and ename not like ('E%O')
+ 16   and ename not like ('E%U')
+ 17   and ename not like ('I%A')
+ 18   and ename not like ('I%E')
+ 19   and ename not like ('I%I')
+ 20   and ename not like ('I%O')
+ 21   and ename not like ('I%U')
+ 22   and ename not like ('O%A')
+ 23   and ename not like ('O%E')
+ 24   and ename not like ('O%I')
+ 25   and ename not like ('O%O')
+ 26   and ename not like ('O%U')
+ 27   and ename not like ('U%A')
+ 28   and ename not like ('U%E')
+ 29   and ename not like ('U%I')
+ 30   and ename not like ('U%O')
+ 31   and ename not like ('U%U');
+
+no rows selected
+
+select emp.*, sal * 12 "Annual SAL", sal + sal * 0.1 "10% hike in SAL"
+  2  from emp
+  3  where sal * 12 > 30000
+  4  and deptno in (10,20,30)
+  5  and comm is not null
+  6  and job in ('SALESMAN', 'PRESIDENT', 'ANALYST')
+  7  and ename not like 'A%E'
+  8  and ename not like 'A%I'
+  9  and ename not like 'A%O'
+ 10  and ename not like 'A%U'
+ 11  and ename not like 'A%A'
+ 12  and ename not like 'E%E'
+ 13  and ename not like 'E%A'
+ 14  and ename not like 'E%I'
+ 15  and ename not like 'E%O'
+ 16  and ename not like 'E%U'
+ 17  and ename not like 'I%A'
+ 18  and ename not like 'I%E'
+ 19  and ename not like 'I%I'
+ 20  and ename not like 'I%O'
+ 21  and ename not like 'I%U'
+ 22  and ename not like 'O%A'
+ 23  and ename not like 'O%E'
+ 24  and ename not like 'O%I'
+ 25  and ename not like 'O%O'
+ 26  and ename not like 'O%U'
+ 27  and ename not like 'U%A'
+ 28  and ename not like 'U%E'
+ 29  and ename not like 'U%I'
+ 30  and ename not like 'U%O'
+ 31  and ename not like 'U%U';
+
+no rows selected
+

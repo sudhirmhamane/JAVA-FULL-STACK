@@ -1,0 +1,244 @@
+----<<< Multi Row Functions >>>----
+
+ /*
+ 131) WAQTD MAX SALARY FROM THE EMPLOYEE TABLE ?
+ */
+ 
+ select max(sal)
+  2  from emp
+  3  ;
+
+  MAX(SAL)
+----------
+      5000
+
+ set lines 1000 pages 1000
+ 
+ 
+ /*
+ 132) WAQTD MAX AND MIN COMM FROM EMPLOYEES TABLE ?
+ */
+ 
+ select max(sal), min(sal)
+  2  from emp;
+
+  MAX(SAL)   MIN(SAL)
+---------- ----------
+      5000        800
+
+ 
+ /*
+ 133) WAQTD TOTAL SALARY NEEDED TO PAY FOR THE SALESMAN ?
+ */
+ 
+ select sum(sal)
+  2  from emp
+  3  where job = 'SALESMAN';
+
+  SUM(SAL)
+----------
+      5600
+
+ 
+ 
+ /*
+ 134) WAQTD NUMBER OF EMPLOYEES WORKING IN DEPTNO 30 ?
+ */
+ 
+ select count(ename)
+  2  from emp
+  3  where deptno = 30;
+
+COUNT(ENAME)
+------------
+           6
+
+ 
+ 
+ /*
+ 
+ 135) WAQTD NUMBER OF EMPLOYEES WORKING AS MANAGER IN DEPTNO 20?
+ 
+ */
+ 
+ select count(ename)
+  2  from emp
+  3  where job = 'MANAGER' and detpno = 20;
+where job = 'MANAGER' and detpno = 20
+                          *
+ERROR at line 3:
+ORA-00904: "DETPNO": invalid identifier
+
+
+ select count(ename)
+  2  from emp
+  3  where job = 'MANAGER' and deptno = 20;
+
+COUNT(ENAME)
+------------
+           1
+
+ 
+ 
+ /*
+ 
+ 136) WAQTD MAX SALARY NEEDED TO PAY FOR THE EMPLOYEES WHOSE NAME STARTS WITH A ?
+ 
+ */
+ 
+ select max(sal)
+  2  from emp
+  3  where ename like 'A%';
+
+  MAX(SAL)
+----------
+      1600
+
+ 
+ 
+ select max(sal)
+  2  from emp
+  3  where regexp_like (ename, '^A', 'i');
+
+  MAX(SAL)
+----------
+      1600
+
+ 
+ 
+ /*
+ 
+ 137) WAQTD AVG SALARY NEEDED TO PAY FOR THE EMPLOYEES OF DEPTNO 10 ?
+ 
+ 
+ */
+ 
+ select avg(sal)
+  2  from emp
+  3  where deptno = 10;
+
+  AVG(SAL)
+----------
+2916.66667
+
+ /*
+ 
+ 138) WAQTD TOTAL SALARY AND AVG SALARY NEEDED TO PAY FOR THE EMPLOYEES WHO ARE HIRED IN THE RAN
+GE OF 81 TO 87 ?
+ 
+ */
+ 
+ select sum(sal), avg(sal)
+  2  from emp
+  3  where hiredate between '01-jan-81' and '01-jan-87';
+
+  SUM(SAL)   AVG(SAL)
+---------- ----------
+     24125 2193.18182
+
+ 
+ 
+ /*
+ 
+ 139) WAQTD NUMBER OF EMPLOYEES WORKING IN DEPTNO 40 ?
+ 
+ */
+ 
+ select count(ename)
+  2  from emp
+  3  where deptno = 40;
+
+COUNT(ENAME)
+------------
+           0
+
+ 
+ 
+ /*
+ 
+ 140) WAQTD TOTAL SALARY NEEDED TO PAY FOR THE EMPLOYEES WHO ARE REPORTING TO 7839 ?
+ 
+ */
+ 
+ select sum(sal)
+  2  from emp
+  3  where empno = 7839;
+
+  SUM(SAL)
+----------
+      5000
+
+ select sum(sal)
+  2  from emp
+  3  where mgr = 7839;
+
+  SUM(SAL)
+----------
+      8275
+
+ /*
+ 
+ 141) WAQTD HOW MANY EMPLOYEES ARE WORKIN AS PRESIDENT IN DEPTNO 10 AND EARNING SALARY MORE THEN
+ 4000 ?
+ 
+ */
+ 
+ select count(ename)
+  2  from emp
+  3  where job = 'PRESIDENT' and deptno = 10 and sal > 4000;
+
+COUNT(ENAME)
+------------
+           1
+
+ /*
+ 
+ 142) WAQTD HOW MANY EMPLOYEES ARE WORKIN AS SALESMAN IN DEPTNO 30 AND EARNING SALARY LESS THEN 
+5000 ?
+ 
+ */
+ 
+ select count(ename)
+  2  from emp
+  3  where job = 'SALESMAN' and deptno = 30 and sal < 5000;
+
+COUNT(ENAME)
+------------
+           4
+
+ /*
+ 
+ 143) WAQTD HOW MANAY EMPLOYEES ARE HIRED ON 03-DEC- 81 iN DEPTNO 10 , 20
+ 144) WAQTD HOW MUCH TOTAL SALARY NEEDE TO PAY FOR THE EMPLOYEE
+ 
+ */
+ 
+ select count(ename)
+  2  from emp
+  3  where hiredate = '03-dec-81' and deptno in (10, 20);
+
+COUNT(ENAME)
+------------
+           1
+
+ select sum(sal)
+  2  from emp
+  3  ;
+
+  SUM(SAL)
+----------
+     29025
+
+ /*
+ 144) WAQTD HOW MUCH TOTAL SALARY NEEDE TO PAY FOR THE EMPLOYEE WHOSE MAME HAVING A CHARACTER ?
+ */
+ 
+ select sum(sal)
+  2  from emp
+  3  where regexp_like (ename, '.*A.*', 'i');
+
+  SUM(SAL)
+----------
+     11450
+
+ 

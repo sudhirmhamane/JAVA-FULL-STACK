@@ -30,7 +30,9 @@ the group by clause will execute
 
 ---
 
-## 1.  WAQTD the detno in which exactly two emp are working.
+## QUESTION on having clause
+
+### 1.  WAQTD the detno in which exactly two emp are working.
 
 ```
 select deptno
@@ -38,3 +40,24 @@ from emp
 group by deptno
 having count(*) = 2;
 ```
+
+### 2. WAQTD the job in which total salary which needed to pay is more than 9000.
+
+```
+select job
+from emp
+group by job
+having sum(sal) > 9000;
+```
+### 3. WAQTD the deptno in which atleast two cleark are working.
+
+```
+
+select deptno
+from emp
+where job = 'CLERK'
+group by deptno
+having count(*) >= 2;
+
+```
+

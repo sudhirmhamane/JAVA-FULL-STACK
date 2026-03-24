@@ -170,3 +170,30 @@ Type checking happens at runtime
 
 3. Runtime errors:
 Errors occured at runtime or during execution harder to debug.
+
+---
+
+## Classification of Language Based on their execution through multiple platform:
+
+Their are mainly two types,
+
+1. Platform Indepenedent application language
+2. platform Dependent application language
+
+### Platform:
+
+A Platform in programming refers to the environment where program runs(executes).
+
+It includes both hardware and software that supports the execution of program.
+
+It provides the environment for developing and running an application.
+
+**Hardware**: A physical part of m/c that we can see an touch
+
+ex-> keyboard, monitor, cpu, ram, mouse, etc.
+
+**Software**: Software is collection of program, instruction and data that tells the m/c what to do.
+
+basically software controls the hardware and makes it useful.
+
+Ex-> Operating system, Drivers, Chrome, Microsoft Office tools, etc

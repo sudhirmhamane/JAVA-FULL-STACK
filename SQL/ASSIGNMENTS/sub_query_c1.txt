@@ -555,3 +555,297 @@ FORD             3000 ANALYST
 MILLER           1300 CLERK
 
 12 rows selected.
+
+
+--------------------------------
+
+
+<<< Sub query case 2 >>>
+
+ -- sub query case 2
+ 
+ select * from dept
+  2  
+ /*
+ 186).WAQTD DNAME OF THE EMPLOYEES WHOS NAME IS SMITH 
+ */
+ 
+ select dname
+  2  from dept
+  3  where deptno = ( select deptno
+  4                   from emp
+  5                   where ename = 'SMITH');
+
+DNAME
+--------------
+RESEARCH
+
+ select * from dept;
+
+    DEPTNO DNAME          LOC
+---------- -------------- -------------
+        10 ACCOUNTING     NEW YORK
+        20 RESEARCH       DALLAS
+        30 SALES          CHICAGO
+        40 OPERATIONS     BOSTON
+
+ /*
+ 
+ 187).WAQTD DNAME AND LOC OF THE EMPLOYEE WHOS
+ ENAME IS KING 
+ 
+ */
+ 
+ select dname, loc
+  2  from dept
+  3  where deptno = ( select deptno
+  4                   from emp
+  5                   where ename = 'KING');
+
+DNAME          LOC
+-------------- -------------
+ACCOUNTING     NEW YORK
+
+ /*
+ 
+ 188).WAQTD LOC OF THE EMP WHOS EMPLOYEE NUMBER IS
+ 7902
+ 
+ 
+ */
+ 
+ select loc
+  2  from dept
+  3  where deptno = ( select deptno
+  4                   from emp
+  5                   where empno = 7902);
+
+LOC
+-------------
+DALLAS
+
+ /*
+ 
+ 189) WAQTD DNAME AND LOC ALONG WITH DEPTNO OF THE EMPLOYEE WHOS NAME ENDS WITH 'R'.
+ 
+ */
+ 
+ select dname, loc
+  2  from dept
+  3  where 
+  4  
+ select dname, loc, deptno
+  2  from dept
+  3  where deptno = ( select deptno
+  4                   from emp
+  5                   where ename likes '%R');
+                 where ename likes '%R')
+                             *
+ERROR at line 5:
+ORA-00920: invalid relational operator
+
+
+ select dname, loc, deptno
+  2  from dept
+  3  where deptno = ( select deptno
+  4                   from emp
+  5                   where ename likes '%R');
+                 where ename likes '%R')
+                             *
+ERROR at line 5:
+ORA-00920: invalid relational operator
+
+
+             where ename likes '%R')
+SP2-0734: unknown command beginning "where enam..." - rest of line ignored.
+ select dname, loc, deptno
+  2  from dept
+  3  where deptno = ( select deptno
+  4                   from emp
+  5                   where ename likes '%R');
+                 where ename likes '%R')
+                             *
+ERROR at line 5:
+ORA-00920: invalid relational operator
+
+
+             where ename likes '%
+SP2-0734: unknown command beginning "where enam..." - rest of line ignored.
+ 
+ 
+ 
+ /*
+ 
+ 189) WAQTD DNAME AND LOC ALONG WITH DEPTNO OF THE EMPLOYEE WHOS NAME ENDS WITH 'R'.
+ */
+ 
+ select dname, loc, deptno
+  2  from deptno
+  3  
+ select dname, loc, deptno
+  2  from dept
+  3  where deptno = ( select detpno
+  4                   from emp
+  5                   where ename like '%A');
+where deptno = ( select detpno
+                        *
+ERROR at line 3:
+ORA-00904: "DETPNO": invalid identifier
+
+
+ select dname, loc, deptno
+  2  from dept
+  3  where deptno = ( select deptno from emp where ename like '%A');
+
+no rows selected
+
+ select dname, loc, deptno
+  2  from dept
+  3  where deptno = ( select deptno from emp where ename like '%R');
+where deptno = ( select deptno from emp where ename like '%R')
+                 *
+ERROR at line 3:
+ORA-01427: single-row subquery returns more than one row
+
+
+ select dname, loc, deptno
+  2  from dept
+  3  where deptno in ( select deptno from emp where ename like '%R');
+
+DNAME          LOC               DEPTNO
+-------------- ------------- ----------
+ACCOUNTING     NEW YORK              10
+SALES          CHICAGO               30
+
+ /*
+ 
+ 190) .WAQTD DNAME OF THE EMPLOYEE WHOS DESIGNATION IS PRESIDENT
+ 
+ */
+ 
+ select dname
+  2  from dept
+  3  where deptno = ( select deptno from emp where job = 'PRESIDENT');
+
+DNAME
+--------------
+ACCOUNTING
+
+ /*
+ 
+ 191) .WAQTD NAMES OF THE EMPLOYEES WORKING IN
+ ACCOUNTING DEPARTMENT
+ 
+ 
+ */
+ 
+ select ename
+  2  from emp
+  3  where deptno = ( select deptno from dept where dname = 'ACCOUNTING');
+
+ENAME
+----------
+CLARK
+KING
+MILLER
+
+ /*
+ 
+  192) .WAQTD ENAME AND SALARIES OF THE EMPLOYEES WHO ARE WORKING IN THE LOCATION CHICAGO
+ 
+ */
+ 
+ select ename, sal
+  2  from emp
+  3  where deptno = ( select deptno from dept where location = 'CHICAGO');
+where deptno = ( select deptno from dept where location = 'CHICAGO')
+                                               *
+ERROR at line 3:
+ORA-00904: "LOCATION": invalid identifier
+
+
+ select * from dept;
+
+    DEPTNO DNAME          LOC
+---------- -------------- -------------
+        10 ACCOUNTING     NEW YORK
+        20 RESEARCH       DALLAS
+        30 SALES          CHICAGO
+        40 OPERATIONS     BOSTON
+
+ select ename, sal
+  2  from emp
+  3  where deptno = ( select deptno from dept where loc = 'CHICAGO');
+
+ENAME             SAL
+---------- ----------
+ALLEN            1600
+WARD             1250
+MARTIN           1250
+BLAKE            2850
+TURNER           1500
+JAMES             950
+
+6 rows selected.
+
+ /*
+ 
+ 193). WAQTD DETAILS OF THE EMPLOYEES WORKING IN SALES 
+ 
+ */
+ 
+ select *
+  2  from emp
+  3  where deptno = ( select deptno from dept where dname = 'SALES');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+6 rows selected.
+
+ /*
+ 
+ 194) .WAQTD DETAILS OF THE EMP ALONG WITH ANNUAL
+ SALARY IF EMPLOYEES ARE WORKING IN NEW YORK
+ 
+ 
+ */
+ 
+ select *
+  2  from emp
+  3  where deptno = ( select deptno from dept where loc = 'NEW YORK');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+ select emp.*, sal * 12
+  2  from emp
+  3  where deptno = ( select deptno from dept where loc = 'NEW YORK');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     SAL*12
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ----------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10      29400
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10      60000
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10      15600
+
+ 
+ /*
+ 
+  195) .WAQTD NAMES OF EMPLOYEES WORKING IN OPERATIONS DEPARTMENT
+ 
+ */
+ 
+ select ename
+  2  from emp
+  3  where deptno = ( select deptno from dept where dname = 'OPERATIONS');
+
+no rows selected

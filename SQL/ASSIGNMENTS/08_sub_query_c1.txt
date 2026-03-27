@@ -122,19 +122,6 @@ FORD               20
  /*
  
  169) WAQTD NAME AND JOB OF ALL THE EMPLOYEES WORKING IN THE SAME DESIGNATION AS JAMES 
- 
- */
- select ename, job
-  2  from emp
-  3  where ( select job
-  4  from emp
-  5  where ename = 'JAMES');
-where ename = 'JAMES')
-                     *
-ERROR at line 5:
-ORA-00936: missing expression
-
-
  select ename, job
   2  from emp
   3  where job = (select job
@@ -153,16 +140,6 @@ MILLER     CLERK
  170)WAQTD EMPNO AND ENAME ALONG WITH ANNUAL SALARY OF ALL THE EMPLOYEES IF THEIR ANNUAL SALARY IS GREATER THAN WARDS ANNUAL SALARY.
  
  */
- 
- select empno, ename, sal * 12 "Annual Sal"
-  2  from emp
-  3  where sal * 12 > ( select 
-  4  sal * 12
-  5  from emp
-  6  where ename = 'WARDS');
-
-no rows selected
-
  select empno, ename, sal * 12 "Annual Sal"
   2  from emp
   3  where sal * 12 > ( select 
@@ -191,38 +168,6 @@ no rows selected
  
  
  */
- 
- select ename, hiredate
-  2  from emp 
-  3  where hiredate > (select hiredate
-  4                    from emp
-  5                    where hiredate < (select 
-  6                                      hiredate 
-  7                                      from emp
-  8                                      where job = 'PRESIDENT');
-where hiredate > (select hiredate
-                  *
-ERROR at line 3:
-ORA-00921: unexpected end of SQL command
-
-
- select ename, hiredate
-  2  from emp 
-  3  where hiredate > (select hiredate
-  4                    from emp
-  5                    where ename = 'SCOTT') and 
-  6                   hiredate 
-  7  
- select ename, hiredate
-  2  from emp
-  3  where hiredate < (select hiredate
-  4                    from emp
-  5                    where ename = 'SCOTT') and hiredate >
-  6                   (select hiredate 
-  7                    from emp
-  8                     where ename = 'PRESIDENT');
-
-no rows selected
 
  select ename, hiredate
   2  from emp
@@ -245,17 +190,6 @@ MILLER     23-JAN-82
 PNO IS 7839
  
  */
- 
- select ename, sal
-  2  from emp
-  3  where sal < ( select sal 
-  4                from emp
-  5                where empno = 
-  6  
- select ename, sal
-  2  from emp
-  3  where empno <
-  4  
  select ename, sal
   2  from emp
   3  where sal < ( select sal 
@@ -359,17 +293,6 @@ TURNER           1500
 ION AS SMITH 
  
  */
- 
- select *
-  2  from emp
-  3  where deptno = 20 and ( select job
-  4                          from emp
-  5                          where ename = 'SMITH');
-                        where ename = 'SMITH')
-                                             *
-ERROR at line 5:
-ORA-00936: missing expression
-
 
  select *
   2  from emp
@@ -405,17 +328,6 @@ ORA-00936: missing expression
  
  select ename, hiredate
   2  from emp
-  3  where hiredate >= '01-jan-1980' and hiredate ( select hiredate
-  4                                                 from emp
-  5                                                 where ename = 'KING');
-where hiredate >= '01-jan-1980' and hiredate ( select hiredate
-                                               *
-ERROR at line 3:
-ORA-00936: missing expression
-
-
- select ename, hiredate
-  2  from emp
   3  where hiredate >= '01-jan-1980' and hiredate < ( select hiredate
   4    from emp
   5    where ename = 'KING');
@@ -448,24 +360,8 @@ no rows selected
 
  /*
  182).WAQTD NAME OF THE EMPLOYEES WHOS NAME STARTS WITH 'A' AND WORKS IN THE SAME DEPT AS BLAKE 
-
- 
  */
  
- select ename
-  2  from emp
-  3  where ename like '%A' and deptno = ( select deptno
-  4                                       from emp
-  5                                       where ename = 'BLAKE');
-
-no rows selected
-
-  select ename
-  2   from emp
-  3   where ename like 'A%' and deptno = ( select deptno
-  4                 from emp
-  5                 where ename = 'BLAKE');
-
 ENAME
 ----------
 ALLEN
@@ -489,17 +385,6 @@ no rows selected
  
  */
  
- select select *
-  2  from emp
-  3  where job = 'CLERK' and deptno = ( select deptno
-  4                                     from emp
-  5                                     where ename = 'TURNER');
-select select *
-       *
-ERROR at line 1:
-ORA-00936: missing expression
-
-
  select *
   2  from emp
   3  where job = 'CLERK' and deptno = ( select deptno
@@ -516,22 +401,7 @@ ORA-00936: missing expression
 D LESS THAN KING.
  
  */
- 
- select ename, sal, job 
-  2  from emp
-  3  where sal * 12 > (select sal from emp where ename = 'SMITH') and sal * 12 < (select sal from em
-p where ename = 'KING');
 
-no rows selected
-
- select ename, sal, job 
-  2  from emp
-  3  where sal * 12 > (select sal * 12 from emp where ename = 'SMITH')
-  4  and sal * 12 < (select sal * 12 from emp where enae = 'KING');
-and sal * 12 < (select sal * 12 from emp where enae = 'KING')
-                                               *
-ERROR at line 4:
-ORA-00904: "ENAE": invalid identifier
 
 
  select ename, sal, job 
@@ -624,89 +494,12 @@ LOC
 -------------
 DALLAS
 
- /*
- 
- 189) WAQTD DNAME AND LOC ALONG WITH DEPTNO OF THE EMPLOYEE WHOS NAME ENDS WITH 'R'.
- 
- */
- 
- select dname, loc
-  2  from dept
-  3  where 
-  4  
- select dname, loc, deptno
-  2  from dept
-  3  where deptno = ( select deptno
-  4                   from emp
-  5                   where ename likes '%R');
-                 where ename likes '%R')
-                             *
-ERROR at line 5:
-ORA-00920: invalid relational operator
-
-
- select dname, loc, deptno
-  2  from dept
-  3  where deptno = ( select deptno
-  4                   from emp
-  5                   where ename likes '%R');
-                 where ename likes '%R')
-                             *
-ERROR at line 5:
-ORA-00920: invalid relational operator
-
-
-             where ename likes '%R')
-SP2-0734: unknown command beginning "where enam..." - rest of line ignored.
- select dname, loc, deptno
-  2  from dept
-  3  where deptno = ( select deptno
-  4                   from emp
-  5                   where ename likes '%R');
-                 where ename likes '%R')
-                             *
-ERROR at line 5:
-ORA-00920: invalid relational operator
-
-
-             where ename likes '%
-SP2-0734: unknown command beginning "where enam..." - rest of line ignored.
- 
- 
  
  /*
  
  189) WAQTD DNAME AND LOC ALONG WITH DEPTNO OF THE EMPLOYEE WHOS NAME ENDS WITH 'R'.
  */
  
- select dname, loc, deptno
-  2  from deptno
-  3  
- select dname, loc, deptno
-  2  from dept
-  3  where deptno = ( select detpno
-  4                   from emp
-  5                   where ename like '%A');
-where deptno = ( select detpno
-                        *
-ERROR at line 3:
-ORA-00904: "DETPNO": invalid identifier
-
-
- select dname, loc, deptno
-  2  from dept
-  3  where deptno = ( select deptno from emp where ename like '%A');
-
-no rows selected
-
- select dname, loc, deptno
-  2  from dept
-  3  where deptno = ( select deptno from emp where ename like '%R');
-where deptno = ( select deptno from emp where ename like '%R')
-                 *
-ERROR at line 3:
-ORA-01427: single-row subquery returns more than one row
-
 
  select dname, loc, deptno
   2  from dept
@@ -754,15 +547,6 @@ MILLER
   192) .WAQTD ENAME AND SALARIES OF THE EMPLOYEES WHO ARE WORKING IN THE LOCATION CHICAGO
  
  */
- 
- select ename, sal
-  2  from emp
-  3  where deptno = ( select deptno from dept where location = 'CHICAGO');
-where deptno = ( select deptno from dept where location = 'CHICAGO')
-                                               *
-ERROR at line 3:
-ORA-00904: "LOCATION": invalid identifier
-
 
  select * from dept;
 
@@ -847,5 +631,178 @@ JAMES             950
  select ename
   2  from emp
   3  where deptno = ( select deptno from dept where dname = 'OPERATIONS');
+
+no rows selected
+
+--------------
+
+queries on case 1&2
+
+--- <<<<<<<<< sub query case 1&2 >>>>>>>>---
+
+/*
+
+195) .WAQTD NAMES OF THE EMPLOYEES EARNING MORE THAN SCOTT IN ACCOUNTING DEPT
+
+*/
+
+select ename
+  2  from emp
+  3  where sal > ( select sal 
+  4                from emp
+  5                where ename = 'SCOTT') and deptno in 
+  6              ( select deptno
+  7                from dept
+  8                where dname = 'ACCOUNTING');
+
+ENAME
+----------
+KING
+
+/*
+
+196). WAQTD DETAILS OF THE EMPLOYEES WORKING AS
+MANAGER IN THE LOCATION CHICAGO 
+
+
+*/
+
+select *
+  2  from emp
+  3  where job in ( select job 
+  4     from emp
+  5     where job = 'MANAGER') and deptno in
+  6   ( select deptno
+  7     from dept
+  8     where loc = 'CHICAGO');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+
+/*
+
+197) .WAQTD NAME AND SAL OF THE EMPLOYEES EARNING MORE THAN KING IN THE DEPT ACCOUNTING
+
+*/
+
+select ename, sal
+  2  from emp
+  3  where sal in ( select sal from emp where ename = 'KING')
+  4  and deptno in ( select deptno from dept where dname = 'ACCOUNTING');
+
+ENAME             SAL
+---------- ----------
+KING             5000
+
+/*
+
+198) .WAQTD DETAILS OF THE EMPLOYEES WORKING AS
+SALESMAN IN THE DEPARTEMENT SALES 
+
+*/
+
+
+select * 
+  2  from emp
+  3  where job in ( select job from emp where job = 'SALESMAN')
+  4  and deptno in ( select deptno from dept where dname = 'SALES');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+
+/*
+
+
+199) .WAQTD NAME, SAL. JOB, HIREDATE OF THE EMPLOYEES WORKING IN OPERATIONS DEPARTMENT AND HIRE
+D BEFORE KING
+
+*/
+
+select ename, sal, job, hiredate
+  2  from emp
+  3  where deptno in ( select deptno from dept where dname = 'OPERATIONS') and 
+  4  hiredate < ( select hiredate from emp where ename = 'KING');
+
+no rows selected
+
+
+/*
+
+200) .DISPLAY ALL THE EMPLOYEES WHOSE DEPARTMET NAMES ENDING 'S'.
+
+*/
+
+select *
+  2  from emp
+  3  where deptno in ( select deptno from dept where dname like '%S');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+6 rows selected.
+
+/*
+
+201) .WAQTD DNAME OF THE EMPLOYEES WHOS NAMES HAS CHARACTER 'A' IN IT.
+
+*/
+
+select dname
+  2  from dept
+  3  where deptno in ( select deptno from emp where ename like '%A%');
+
+DNAME
+--------------
+ACCOUNTING
+RESEARCH
+SALES
+
+/*
+202) . WAQTD DNAME AND LOC OF THE EMPLOYEES WHOS
+SALARY IS RUPEES 800.
+*/
+
+select dname, loc
+  2  from dept
+  3  where deptno in ( select deptno from emp where sal = 800);
+
+DNAME          LOC
+-------------- -------------
+RESEARCH       DALLAS
+
+/*
+
+203) .WAQTD DNAME OF THE EMPLOYEES WHO EARN COMISSION
+
+*/
+
+select dname
+  2  from dept
+  3  where deptno in ( select deptno from emp where comm is not null);
+
+DNAME
+--------------
+SALES
+
+/*
+
+204) .WAQTD LOC OF THE EMPLOYEES IF THEY EARN COMISSION IN DEPT 40
+
+*/
+
+select loc
+  2  from dept
+  3  where deptno in ( select deptno from emp where comm is not null and deptno = 40);
 
 no rows selected

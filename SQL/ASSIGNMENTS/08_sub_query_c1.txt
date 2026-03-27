@@ -806,3 +806,154 @@ select loc
   3  where deptno in ( select deptno from emp where comm is not null and deptno = 40);
 
 no rows selected
+
+--- <<<< ASSIGNMENT ON TYPES OF SUB QUERY. >>>>>>>>---
+
+/* 205) .WAQTD NAME OF THE EMPLOYEES EARNING SALARY MORE THAN THE SALESMAN */
+
+select ename
+  2  from emp
+  3  where sal > all ( select sal
+  4  from emp
+  5  where job = 'SALESMAN');
+
+ENAME
+----------
+JONES
+BLAKE
+CLARK
+SCOTT
+KING
+FORD
+
+6 rows selected.
+
+/* 206) WAQTD DETAILS OF THE EMPLOYEES HIRED AFTER ALL THE CLERKS */
+
+select *
+  2  from emp
+  3  where hiredate >all ( select hiredate
+  4  from emp
+  5  where job = 'CLERK');
+
+no rows selected
+
+/*  208) WAQTD NAME AND HIREDATE OF EMPLOYEES HIRED BEFORE ALL THE MANAGERS */
+
+select ename
+  2  from emp
+  3  where hiredate <all ( select hiredate
+  4     from emp
+  5     where job = 'MANAGER');
+
+ENAME
+----------
+SMITH
+ALLEN
+WARD
+
+/* 209) .WAQTD NAMES OF THE EMPLOYEES HIRED AFTER ALL THE MANAGERS AND EARNING SALARY MORE THAN
+ ALL THE CLERKS */
+
+select ename
+  2  from emp
+  3  where hiredate >all ( select hiredate
+  4     from emp
+  5     where job = 'MANAGER') and sal >all ( select
+  6        sal from emp
+  7        where job = 'CLERK');
+
+ENAME
+----------
+SCOTT
+KING
+TURNER
+FORD
+
+/* 210) .WAQTD DETAILS OF THE EMPLOYEES WORKING AS CLERK AND HIRED BEFORE ATLEST A SALESMAN  */
+
+select *
+  2  from emp
+  3  where job = 'CLERK' and hiredate <any ( select hiredate from emp where job = 'SALESMAN');
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO
+----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20
+
+
+set lines 1000 pages 1000
+/*  211).WAQTD DETAILS OF EMPLOYEES WORKING IN ACCOUNTING OR SALES DEPT */
+
+ select *
+  2   from emp
+  3   where deptno in  ( select deptno
+  4                      from dept
+  5  where dname in ('ACCOUNTING', 'SALES'));
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+9 rows selected.
+
+/* 212) WAQTD DEPARTMENT NAMES OF THE EMPOYEES WITH NAME SMITH, KING AND MILLER */
+
+select dname
+  2  from dept
+  3  where deptno in ( select deptno
+  4                    from emp
+  5                    where ename in ('SMITH','KING','MILLER'));
+
+DNAME
+--------------
+ACCOUNTING
+RESEARCH
+
+/* 213) .WAQTD DETAILS OF EMPLOYEES WORKING NEWYORK OR CHICAGO */
+
+select *
+  2  from emp
+  3  where deptno in ( select deptno
+  4                    from dept
+  5                    where loc in ('NEW YORK', 'CHICAGO'));
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+9 rows selected.
+
+/* 214)  WAQTD EMP NAMES IF EMPLOYEES ARE HIRED AFTER ALL THE EMPLOYEES OF DEPT 10 */
+
+select ename
+  2  from emp
+  3  where hiredate <all ( select hiredate
+  4                        from emp
+  5                        where deptno = 10);
+
+ENAME
+----------
+SMITH
+ALLEN
+WARD
+JONES
+BLAKE

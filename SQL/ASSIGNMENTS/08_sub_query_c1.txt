@@ -957,3 +957,134 @@ ALLEN
 WARD
 JONES
 BLAKE
+
+-- <<< ASSIGNMENT ON NESTED SUB QUERY >>> --
+
+-- 61. WAQTD 2ND MINIMUM SALARY
+
+select sal
+  2  from emp
+  3  where sal in ( select min(sal)
+  4    from emp
+  5  where sal > ( select min(sal) from emp ));
+
+       SAL
+----------
+       950
+
+
+-- 62. WAQTD 5TH MAXIMUM SALARY
+
+select sal
+  2  from emp
+  3  where sal in ( select max(sal) from emp
+  4    where sal < (select max(sal) from emp
+  5    where sal < (select max(sal) from emp
+  6    where sal < (select max(sal) from emp
+  7    where sal < (select max(sal) from emp )))));
+
+       SAL
+----------
+      2450
+
+-- 63. WAQTD NAME OF THE EMPLOYEE EARNING 3RD MAXIMUM SALARY
+
+select ename
+  2  from emp
+  3  where sal in (select max(sal) from emp
+  4    where sal < (select max(sal) from emp
+  5    where sal < (select max(sal) from emp )));
+
+ENAME
+----------
+JONES
+
+
+-- 64.WAQTD EMPNO OF THE EMPLOYEE EARNING 2D MAXIMUM SALARY
+
+select empno, ename
+  2  from emp
+  3  where sal in ( select max(sal) from emp
+  4   where sal < ( select max(sal) from emp));
+
+     EMPNO ENAME
+---------- ----------
+      7788 SCOTT
+      7902 FORD
+
+-- 65. WAQTD DEPARTMENT NAME OF AN EMPLOYEE GETTING 4TH MAX SAL
+
+
+select dname
+  2  from dept
+  3  where deptno in ( select deptno from emp where sal in ( select max(sal) from emp
+  4  where sal < (select max(sal) from emp
+  5  where sal < (select max(sal) from emp
+  6  where sal < (select max(sal) from emp)))));
+
+DNAME
+--------------
+SALES
+
+/* 
+66. WAQTD DETAILS OF THE EMPLOYEE WHO WAS HIRED 2nd 67.WAQTD NAME OF THE EMPLOYEE HIRED BEFORE 
+THE LAST EMPLOYEE
+*/
+
+select *
+  2  from emp
+  3  where hiredate in ( select max(hiredate) from emp
+  4  where hiredate < ( select max(hiredate) from emp ));
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+
+-- 67.WAQTD NAME OF THE EMPLOYEE HIRED BEFORE THE LAST EMPLOYEE
+
+select ename 
+  2  from emp
+  3  where hiredate in ( select max(hiredate) from emp
+  4  where hiredate < (select max(hiredate) from emp));
+
+ENAME
+----------
+SCOTT
+
+-- 68. WAQTD LOC OF THE EMPLOYEE WHO WAS HIRED FIRST
+
+select loc
+  2  from dept
+  3  where deptno in ( select deptno from emp where hiredate in ( select min(hiredate) from emp ));
+
+LOC
+-------------
+DALLAS
+
+-- 69. WAQTD DETAILS OF THE EMPLOYEE EARNING 7TH MINIMUM SALARY
+
+select *
+  2  from emp
+  3  where sal in ( select min(sal) from emp
+  4  where sal > ( select min(sal) from emp
+  5  where sal > ( select min(sal) from emp
+  6  where sal > ( select min(sal) from emp
+  7  where sal > ( select min(sal) from emp
+  8  where sal > ( select min(sal) from emp
+  9  where sal > ( select min(sal) from emp )))))));
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+
+-- 70. WAQTD DNAME OF EMPLOYEE GETTING 2ND MAXIMUM SALARY
+
+select dname
+  2  from dept
+  3  where deptno in ( select deptno from emp
+  4  where sal in ( select max(sal) from emp
+  5   where sal < ( select max(sal) from emp )));
+
+DNAME
+--------------
+RESEARCH

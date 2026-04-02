@@ -139,3 +139,12 @@ where sal >All ( select sal
     from emp
     where deptno = 20)
 ```
+
+## NESTED SUB QUERY:
+
+A Sub query written inside an another sub query is known as nested sub query.
+
+We Can nest 255 sub queries.
+
+The inner most sub query will execute first then followed by the outer query.
+

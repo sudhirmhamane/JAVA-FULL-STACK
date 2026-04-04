@@ -197,3 +197,125 @@ ex-> keyboard, monitor, cpu, ram, mouse, etc.
 basically software controls the hardware and makes it useful.
 
 Ex-> Operating system, Drivers, Chrome, Microsoft Office tools, etc
+
+---
+
+### Platform Dependent Language:
+
+An Application created at one specific platform which can only run the same specific platform is known as the platform dependent language.
+
+This Application cannot run on multiple platform without recompailation or modification of base code.
+
+**Ex-** C++, C
+
+PDL is directly compiled into machine code.
+
+the m/c code can be,
+
+1. specific to cpu.
+2. specific to operating system.
+
+so the output from this language become tightly coupled with operating systema and hardware.
+
+---
+
+**Advantages:**
+
+1.High Performance:
+
+Runs directly on hardware due to which faster in execution.
+
+2. Better Efficiency:
+
+No need for the runtime environment like jvm and pvm
+
+3. optimized for platform specific:
+
+This lanaguage makes Full use of Operating System
+
+4. Full Hardware Access:
+
+It makes use of operating System feature as much as possible
+
+---
+
+**Disadvantages:**
+
+1. Limited Portablity:
+
+Cannot run on different platform
+
+2. High Developement Cost:
+
+For different Operating System we need to create different code bases.
+
+3. Maintenance Complexity:
+
+Due to multiple code bases maintenance(modification of existing feature, adding new features) is difficult.
+
+4. Compatibility issues:
+
+Different Operating System versions may break the application
+
+---
+
+### Platform Independent Language:
+
+An Application developed on one platform can run on multiple platforms without modificationa and recompilation is know as Platform Independent Language.
+
+It Follows the Principle ** Write Ones Run Anywhere **(WORA).
+
+One base code can run on any platform on which jvm or pvm is installed.
+
+**NOTES**
+
+1. The Basic Code created in java(any programming Lang), has to be passed through the compiler.
+
+2. Compiler Converts it to the Byte Code
+(.class) -> java
+(.py) -> python
+
+3. This byte Code is not m/c specific
+
+4. Virtual m/c convert convert this byte code into m/c code at runtime.
+
+5. So some program(byte Code) can run on multiple operating system
+
+JVM specification changes from platform to platform that is why JVM is paltform Dependent.
+
+---
+
+**Advantages**
+
+1. High Portability:
+
+Single base code can run on on multiple platform
+
+2. Reduced Development Efforts:
+
+One code base works for all the platform
+
+3. Faster Deployment:
+
+No need to recompile for different operating system.
+
+4. Easy Maintenance:
+
+Only one base code to manage, changes become easy.
+
+---
+
+**Disadvantages:**
+
+1. Dependency On Runtime:
+
+Always requires a virtual Machine
+
+2. Performance Overhead:
+
+Slower in performance then paltform dependent language.
+
+3. No control over hardware.
+
+4. Steps of execution increases.
+

@@ -33,7 +33,7 @@ Less control over hardware
 
 ---
 
-### 2 Low Level Language:
+### 2. Low Level Language:
 
 A language which is easily understandable to the machine is know as low level language
 
@@ -47,7 +47,7 @@ Low Level Language is also know as machine understandable language.
 
 ---
 
-### 3 Mid Level Language:
+### 3. Mid Level Language:
 
 A lang which is neither understandable to machine nor humans or programmer is known as Mid level Language.
 
@@ -75,7 +75,7 @@ there are mainly two types,
 2. Dyanamically Typed PL
 
 
-### 1 Statically Typed Programming Language:
+### 1. Statically Typed Programming Language:
 
 A Staticallu Typed language is one where variable types are known and checked at compile time i.e before execution.
 
@@ -173,7 +173,7 @@ Errors occured at runtime or during execution harder to debug.
 
 ---
 
-## Classification of Language Based on their execution through multiple platform:
+## 3. Classification of Language Based on their execution through multiple platform:
 
 Their are mainly two types,
 
@@ -200,7 +200,7 @@ Ex-> Operating system, Drivers, Chrome, Microsoft Office tools, etc
 
 ---
 
-### Platform Dependent Language:
+### 1. Platform Dependent Language:
 
 An Application created at one specific platform which can only run the same specific platform is known as the platform dependent language.
 
@@ -259,7 +259,7 @@ Different Operating System versions may break the application
 
 ---
 
-### Platform Independent Language:
+### 2. Platform Independent Language:
 
 An Application developed on one platform can run on multiple platforms without modificationa and recompilation is know as Platform Independent Language.
 
@@ -319,3 +319,78 @@ Slower in performance then paltform dependent language.
 
 4. Steps of execution increases.
 
+---
+
+## 4. Classification of Programming Language Based on paradigm(process):
+
+Their are mainly two types,
+
+1.Imperative Programming Language
+2.Declarative Programming Language
+
+### 1. Imperative Programming Language:
+
+Imperative programming languag focuses "HOW" to do something.
+
+In this we define step by step instruction to solve the program(problem).
+
+Here we control the execution flow(loops and conditions).
+
+**Advantages:**
+
+1. Easy to understand for begineers
+
+2. Control over logic and performance.
+
+3. Widely used in programming languages like java,c,c++
+
+**Disadvantages:**
+
+1. Code can become lengthy
+
+2. Harger to maintain for complex problem.
+
+3. More chances of bug due to mannual control.
+
+**Example:** Sum of element in an array
+
+```
+
+class ArraySum{
+    public static void main(String[] args){
+        int[]arr = {10, 20, 30};
+        int sum = 0;
+
+        for(int i=0; i<arr.length; i++){
+            sum += arr[i];
+        }
+
+        System.out.println(sum);
+    }
+}
+
+o/p -> 50
+```
+
+### 2. Declarative Programming Language:
+
+Declarative Programming Language focuses on what result we want not on how to achieve it.
+
+This paradigm focuses on derised output not step by step process
+
+In this system(compiler/interpreter) decides how to execute
+
+**Adavantages:** 
+
+1. Cleaner and consize code
+2. Easier to maintain
+3. Less bugs
+4. better code redability
+
+**Disadvantages:**
+
+1.Slower in Execution
+2.Less efficient
+3.some time it would be difficult to debug internally
+
+ex: python, react,html,sql,etc

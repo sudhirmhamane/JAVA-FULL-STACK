@@ -166,3 +166,178 @@ select dname, loc, sal+sal*0.18 "Annual Sal"
   6  where ename = 'ALLEN');
 
 no rows selected
+
+/*
+141) WAQTD ANNAUL SALARY AND LOC OF AN EMPLOYEE 
+     WHOSE MANAGER NAME IS KING ?
+
+*/
+
+select sal*12 "AS", loc
+  2  from emp e inner join dept d
+  3  on e.deptno in d.deptno
+  4  where mgr in (select empno
+  5  from emp
+  6  where ename = 'KING');
+
+        AS LOC
+---------- -------------
+     35700 DALLAS
+     34200 CHICAGO
+     29400 NEW YORK
+
+/*
+142) WAQTD ALL TEH DETAILS OF AN EMPLOYEES AND THEIR DNAME AND  LOC  FOR THE EMPLOYEE WHOSE COMM IS NULL IN DEPTNO 10,20  ?
+*/
+select e.*, dname, loc
+  2   from emp e inner join dept d
+  3   on e.deptno in d.deptno
+  4   where comm is null and e.deptno in (10,20);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO DNAME          LOC
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- --------------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20 RESEARCH       DALL
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20 RESEARCH       DALL
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10 ACCOUNTING     NEW 
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20 RESEARCH       DALL
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10 ACCOUNTING     NEW 
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20 RESEARCH       DALL
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20 RESEARCH       DALL
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10 ACCOUNTING     NEW 
+
+8 rows selected.
+
+/*
+143) WAQTD DNAME AND ENAME FOR THE EMPLOYEE WHOSE SALARY ENDS 
+     WITH 50  IN DEPTNO 10,20,30 AND WORKING IN RESEARCH DEPARTMENT ?
+*/
+
+select dname, ename
+  2  from emp e inner join dept d
+  3  on e.deptno in d.deptno
+  4  where regexp_like(sal, '.*50$', 'i') and e.deptno in (10,20,30) and dname in 'RESEARCH';
+
+no rows selected
+
+/*
+144) WAQTD LOC DNAME  AND ENAME OF AN EMPLOYEES WHO 
+      ARE HIRED BEFORE THE LAST TWO EMPLOYEES ?
+*/
+
+ select loc, dname, ename
+  2   from emp e inner join dept d
+  3   on e.deptno in d.deptno
+  4   where hiredate in( select max(hiredate) from emp
+  5    where hiredate <( select max(hiredate) from emp));
+
+LOC           DNAME          ENAME
+------------- -------------- ----------
+DALLAS        RESEARCH       SCOTT
+
+/*
+145) WAQTD DNAME AND SALARY OF AN EMPLOYEE WHOSE 
+     NAME ENDS WITH CONSONANTS ?
+*/
+select dname, sal
+  2  from emp e inner join dept d
+  3  on e.deptno in d.deptno
+  4  where not regexp_like(ename, '[AEIOU]$', 'i');
+
+DNAME                 SAL
+-------------- ----------
+RESEARCH              800
+SALES                1600
+SALES                1250
+RESEARCH             2975
+SALES                1250
+ACCOUNTING           2450
+RESEARCH             3000
+ACCOUNTING           5000
+SALES                1500
+RESEARCH             1100
+SALES                 950
+RESEARCH             3000
+ACCOUNTING           1300
+
+13 rows selected.
+
+/*
+146) WAQTD MGR SAL AND DEPTNO AND LOC OF AN EMPLOYEES WHOSE LOC ENDS WITH S ?
+*/
+
+select mgr, sal, e.deptno, loc
+  2  from emp e inner join dept d
+  3  on e.deptno in d.deptno
+  4  where regexp_like(loc, '.*S$', 'i');
+
+       MGR        SAL     DEPTNO LOC
+---------- ---------- ---------- -------------
+      7902        800         20 DALLAS
+      7839       2975         20 DALLAS
+      7566       3000         20 DALLAS
+      7788       1100         20 DALLAS
+      7566       3000         20 DALLAS
+
+/*
+147) WAQTD EMPNO AND LOC FOR THE EMPLOYEES WHOSE HIREDATE IS '01-JAN-81' IN DALLAS ?
+*/
+
+select empno, loc
+  2  from emp e inner join dept d
+  3  on e.deptno in d.deptno
+  4  where hiredate in '01-JAN-81' and loc in 'DALLAS';
+
+no rows selected
+
+/*
+148) WAQTD ENAME AND LOC AND SAL OF AN EMPLOYES WHOSE EMPNO ARE 7369,7488 ?
+*/
+ select ename, loc, sal
+  2   from emp e inner join dept d
+  3   on e.deptno in d.deptno
+  4   where empno in (7369,7488);
+
+ENAME      LOC                  SAL
+---------- ------------- ----------
+SMITH      DALLAS               800
+
+/*
+149) WAQTD ENAME AND LOC FOR THE EMPLOYEES WHOSE SAL IS LESS THEN KING 
+    AND MORE THEN SMITH IN DEPTNO 30 AND WORKING IN SALES DEPARTMENT ?
+*/
+ select ename, loc
+  2   from emp e inner join dept d
+  3   on e.deptno in d.deptno
+  4   where sal < (select sal
+  5   from emp
+  6   where ename = 'KING')
+  7  and sal > (select sal
+  8  from emp
+  9  where ename = 'SMITH')
+ 10  and e.deptno = 30 
+ 11  and dname = 'SALES';
+
+ENAME      LOC
+---------- -------------
+ALLEN      CHICAGO
+WARD       CHICAGO
+MARTIN     CHICAGO
+BLAKE      CHICAGO
+TURNER     CHICAGO
+JAMES      CHICAGO
+
+6 rows selected.
+
+/*
+150) WAQTD COMM AND LOC FOR THE EMPLOYEES WHOSE MGR IS 7902 WORKING IN
+    ACCOUNTING AND RESEARCH DEPARTMENT ?
+*/
+ select comm, loc
+  2   from emp e inner join dept d
+  3   on e.deptno in d.deptno
+  4   where mgr in (7902)
+  5   and dname in ('ACCOUNTING','RESEARCH');
+
+      COMM LOC
+---------- -------------
+           DALLAS

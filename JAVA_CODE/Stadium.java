@@ -1,6 +1,6 @@
-class Stadium{
+class Stadium {
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 
 		String name = "Stadium";
 		short seatingCapacity = 30000;
@@ -14,17 +14,17 @@ class Stadium{
 		System.out.println("avgAttendance: " + avgAttendance);
 		System.out.println("fluidLights: " + fluidLights);
 		System.out.println("landArea: " + landArea);
-		System.out.println("cameras: "  + cameras);
-	
-		/* 
-			OUTPUT:
-		
-			name: Stadium
-			seatingCapacity: 30000
-			avgAttendance: 28000
-			fluidLights: 500
-			landArea: 150
-			cameras: 400
+		System.out.println("cameras: " + cameras);
+
 		/*
+		 * OUTPUT:
+		 * 
+		 * name: Stadium
+		 * seatingCapacity: 30000
+		 * avgAttendance: 28000
+		 * fluidLights: 500
+		 * landArea: 150
+		 * cameras: 400
+		 */
 	}
 }

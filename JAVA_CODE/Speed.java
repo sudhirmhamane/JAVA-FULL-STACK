@@ -5,6 +5,7 @@ public class Speed {
 		Scanner sc = new Scanner(System.in);
 		double D = sc.nextDouble();
 		double T = sc.nextDouble();
+		sc.close();
 		if(T<1 || T>60){
 			System.out.println("Invalid data");
 		return;
@@ -12,6 +13,7 @@ public class Speed {
 
 		double speed = (D/T)*18/5;
 		System.out.println(speed);
+		
 		
 	}
 }

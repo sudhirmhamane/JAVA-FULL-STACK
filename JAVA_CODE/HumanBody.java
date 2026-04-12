@@ -10,9 +10,10 @@ class HumanBody{
 
 		System.out.println(name);
 		System.out.println("Hands :"+hands);
-		System.out.println("legs);
-		System.out.println(fingers);
-		System.out.println(eyes);
+		System.out.println("legs :"+legs);
+		System.out.println("fingers :" +fingers);
+		System.out.println("eyes :"+eyes);
+		System.out.println("teeths: " + teeths);
 		
 	}
 }

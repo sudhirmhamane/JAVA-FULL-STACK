@@ -337,3 +337,51 @@ KING       ACCOUNTING           5000
 FORD       RESEARCH             3000
 
 6 rows selected.
+158) WAQTDMANAGER NAME AND THE EMPLOYEES SALARY FOR ALL THE EMPLOYEES THOSE WHO ARE WORKING IN DEPTNO 10,20 ?
+select m.ename , e.sal from emp e join emp m on e.mgr = e.empno where e.deptno in (10, 20);
+
+159) WAQTD MANAGERS MANAGER NAME FOR ALL THE MANAGER WHOSE SALARIES ARE LESS THEN EMPLOYES ?
+SELECT DISTINCT mm.ename AS managers_manager_name
+FROM emp e
+JOIN emp m
+ON e.mgr = m.empno
+JOIN emp mm
+ON m.mgr = mm.empno
+WHERE m.sal < e.sal;
+
+
+160) WAQTD EMPLOYEES NAME MANAGER SALARY AND MANAGER MANAGE COMM FOR ALL THE MANAGER WHO HIRED BEFORE THE 87 AS SALESMAN
+AND EARNING SALARY MORE THEN MANAGERS MANAGER ?
+select e.ename , m.sal , mm.comm from emp e join emp m on e.mgr = m.empno join emp mm on m.mgr= mm.empno where m.hiredate < '01-JAN-1987' AND m.job = 'SALESMAN' AND m.sal > mm.sal;
+
+161) WAQTD ENAME AND MANAGER HIREDATE AND JOB FOR ALL THE EMPLOYEES WHO ARE WORKING IN NEW YORK ?
+SELECT e.ename, m.hiredate AS manager_hiredate, m.job AS manager_job
+FROM emp e JOIN dept d ON e.deptno = d.deptno JOIN emp m on e.mgr = m.empno
+WHERE d.loc = 'NEW YORK';
+
+162) WAQTD EMPLOYEES DNAME AND MANAGER LOC INCLUDING EMPLOYEES SALARY AND MANAGER DEPTNO FOR ALL THE EMPLOYEES WHO ARE HIRED BEFORE THE MANAGERS MANAGE ?
+SELECT d.dname, d2.loc AS manager_loc, e.sal, m.deptno AS manager_deptno
+FROM emp e JOIN emp m ON e.mgr = m.empno JOIN dept d ON e.deptno = d.deptno
+JOIN dept d2 ON m.deptno = d2.deptno WHERE e.hiredate < m.hiredate;
+
+163) WAQTD MANAGERS MANAGER NAME FOR ALL THE EMPLOYEES WHO ARE WORKING IN MANAGERS LOCATION AND NOT WORKING IN MANAGES MANAGERS LOCATION ?
+SELECT DISTINCT mm.ename AS managers_manager_name
+from emp e join emp m
+ON e.mgr = m.empno join emp mm ON m.mgr = mm.empno join dept d1
+ON e.deptno = d1.deptno
+JOIN dept d2
+ON m.deptno = d2.deptno
+JOIN dept d3
+ON mm.deptno = d3.deptno
+WHERE d1.loc = d2.loc
+AND d1.loc != d3.loc;
+
+164) WAQTD MANAGER NAME FOR THE MANAGERS MANAGER WHO ARE WORKING IN DEPTNO 20 AS ACTUAL MANAGER AND EARNING SALARY MORE THEN THE EMPLOYEES ?
+select distinct mm.ename AS manager_manager_name
+FROM emp e
+JOIN emp m
+ON e.mgr = m.empno
+join emp mm
+on m.mgr = mm.empno
+where m.deptno = 20
+and m.sal > e.sal;

@@ -55,3 +55,285 @@ from doctor LT, patient RT
 where LT.did in RT.did;
 
 
+--<<other join>>--
+
+/*
+151) WAQTD ENAME AND DNAME FOR ALL THE EMPLOYEES OF THE EMPLOYEES NOT WORKING IN ANY DEPARTMENT
+
+*/
+
+select ename, dname
+  2  from emp lt left join dept rt
+  3  on lt.deptno = rt.deptno(+);
+
+ENAME      DNAME
+---------- --------------
+SMITH      RESEARCH
+ALLEN      SALES
+WARD       SALES
+JONES      RESEARCH
+MARTIN     SALES
+BLAKE      SALES
+CLARK      ACCOUNTING
+SCOTT      RESEARCH
+KING       ACCOUNTING
+TURNER     SALES
+ADAMS      RESEARCH
+JAMES      SALES
+FORD       RESEARCH
+MILLER     ACCOUNTING
+
+14 rows selected.
+
+/*
+152) WAQTDALL THE DETAILS OF AMPLOYEES AND THEIR DEPARTMENT DETAILS IF THE DEPARTMENT IN WHICH 
+NO EMPLOYEES ARE 
+*/
+select *
+  2  from emp LT RIGHT JOIN dept RT
+  3  on LT.deptno in RT.deptno;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     DEPTNO DNAME          LOC
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ---------- ---
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10         10 ACCOUNTING     NEW YORK
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10         10 ACCOUNTING     NEW YORK
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10         10 ACCOUNTING     NEW YORK
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20         20 RESEARCH       DALLAS
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20         20 RESEARCH       DALLAS
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20         20 RESEARCH       DALLAS
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20         20 RESEARCH       DALLAS
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20         20 RESEARCH       DALLAS
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30         30 SALES          CHICAGO
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30         30 SALES          CHICAGO
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30         30 SALES          CHICAGO
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30         30 SALES          CHICAGO
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30         30 SALES          CHICAGO
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30         30 SALES          CHICAGO
+                                                                                              40 OPERATIONS     BOSTON
+
+15 rows selected.
+
+/*
+
+153) WAQTD ALL THE DETAILS OF AN EMPLOYEES AND HIER DEPARTMENT DETAILS IF THE EMPLOYEES NOT WOR
+KING IN ANY DEPARTMENT AND THE DEPARTMENT IN WHICH THE NO EMPLOYEES ARE  WORKING ?
+
+*/
+
+select *
+  2  from emp LT FULL JOIN dept RT
+  3  on LT.deptno in RT.deptno;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     DEPTNO DNAME          LOC
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ---------- ---
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20         20 RESEARCH       DALLAS
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30         30 SALES          CHICAGO
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30         30 SALES          CHICAGO
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20         20 RESEARCH       DALLAS
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30         30 SALES          CHICAGO
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30         30 SALES          CHICAGO
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10         10 ACCOUNTING     NEW YORK
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20         20 RESEARCH       DALLAS
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10         10 ACCOUNTING     NEW YORK
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30         30 SALES          CHICAGO
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20         20 RESEARCH       DALLAS
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30         30 SALES          CHICAGO
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20         20 RESEARCH       DALLAS
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10         10 ACCOUNTING     NEW YORK
+                                                                                              40 OPERATIONS     BOSTON
+
+15 rows selected.
+
+/*
+154) WAQTD ENAME AND SAL AND DNAME FOR THE EMPLOYEES THOSE WHO ARE NOT WORKING IN ANY DEPARTMEN
+T
+*/
+select ename, sal, dname
+  2  from emp lt right join dept rt
+  3  on lt.deptno = rt.deptno;
+
+ENAME             SAL DNAME
+---------- ---------- --------------
+CLARK            2450 ACCOUNTING
+KING             5000 ACCOUNTING
+MILLER           1300 ACCOUNTING
+JONES            2975 RESEARCH
+FORD             3000 RESEARCH
+ADAMS            1100 RESEARCH
+SMITH             800 RESEARCH
+SCOTT            3000 RESEARCH
+WARD             1250 SALES
+TURNER           1500 SALES
+ALLEN            1600 SALES
+JAMES             950 SALES
+BLAKE            2850 SALES
+MARTIN           1250 SALES
+                      OPERATIONS
+
+15 rows selected.
+
+/*
+155) WAQTD HIERDATE AND JOB INCLUDING DNAME AND LOC FOR THE DEPARTMENT IN WHICH NO EMPLOYEES AR
+E WORKING  ?
+*/
+
+select hiredate,  job, dname, loc
+  2  from emp LT right join dept RT
+  3  on LT.deptno = RT.deptno;
+
+HIREDATE  JOB       DNAME          LOC
+--------- --------- -------------- -------------
+09-JUN-81 MANAGER   ACCOUNTING     NEW YORK
+17-NOV-81 PRESIDENT ACCOUNTING     NEW YORK
+23-JAN-82 CLERK     ACCOUNTING     NEW YORK
+02-APR-81 MANAGER   RESEARCH       DALLAS
+03-DEC-81 ANALYST   RESEARCH       DALLAS
+23-MAY-87 CLERK     RESEARCH       DALLAS
+17-DEC-80 CLERK     RESEARCH       DALLAS
+19-APR-87 ANALYST   RESEARCH       DALLAS
+22-FEB-81 SALESMAN  SALES          CHICAGO
+08-SEP-81 SALESMAN  SALES          CHICAGO
+20-FEB-81 SALESMAN  SALES          CHICAGO
+03-DEC-81 CLERK     SALES          CHICAGO
+01-MAY-81 MANAGER   SALES          CHICAGO
+28-SEP-81 SALESMAN  SALES          CHICAGO
+                    OPERATIONS     BOSTON
+
+15 rows selected.
+
+select hiredate, job, dname, loc
+  2  from emp l, dept r
+  3  where l.deptno(+) = r.deptno;
+
+HIREDATE  JOB       DNAME          LOC
+--------- --------- -------------- -------------
+09-JUN-81 MANAGER   ACCOUNTING     NEW YORK
+17-NOV-81 PRESIDENT ACCOUNTING     NEW YORK
+23-JAN-82 CLERK     ACCOUNTING     NEW YORK
+02-APR-81 MANAGER   RESEARCH       DALLAS
+03-DEC-81 ANALYST   RESEARCH       DALLAS
+23-MAY-87 CLERK     RESEARCH       DALLAS
+17-DEC-80 CLERK     RESEARCH       DALLAS
+19-APR-87 ANALYST   RESEARCH       DALLAS
+22-FEB-81 SALESMAN  SALES          CHICAGO
+08-SEP-81 SALESMAN  SALES          CHICAGO
+20-FEB-81 SALESMAN  SALES          CHICAGO
+03-DEC-81 CLERK     SALES          CHICAGO
+01-MAY-81 MANAGER   SALES          CHICAGO
+28-SEP-81 SALESMAN  SALES          CHICAGO
+                    OPERATIONS     BOSTON
+
+15 rows selected.
+
+/*
+156) WAQTD DNAME AND LOC AND JOB FOR THE EMPLOYEES WHO ARE NOT WORKING IN ANY DEPARTMENT AND TH
+E DEPARTMENT NO EMPLOYEES ARE WORKING ?*/
+
+select dname, loc, job
+  2  from emp l, dept r
+  3  where l.deptno = r.deptno;
+
+DNAME          LOC           JOB
+-------------- ------------- ---------
+RESEARCH       DALLAS        CLERK
+SALES          CHICAGO       SALESMAN
+SALES          CHICAGO       SALESMAN
+RESEARCH       DALLAS        MANAGER
+SALES          CHICAGO       SALESMAN
+SALES          CHICAGO       MANAGER
+ACCOUNTING     NEW YORK      MANAGER
+RESEARCH       DALLAS        ANALYST
+ACCOUNTING     NEW YORK      PRESIDENT
+SALES          CHICAGO       SALESMAN
+RESEARCH       DALLAS        CLERK
+SALES          CHICAGO       CLERK
+RESEARCH       DALLAS        ANALYST
+ACCOUNTING     NEW YORK      CLERK
+
+14 rows selected.
+
+select dname, loc, job
+  2  from emp l, dept r
+  3  where 
+  4  
+select dname, loc, job
+  2  from emp l full join dept r
+  3  on l.deptno = r.deptno;
+
+DNAME          LOC           JOB
+-------------- ------------- ---------
+RESEARCH       DALLAS        CLERK
+SALES          CHICAGO       SALESMAN
+SALES          CHICAGO       SALESMAN
+RESEARCH       DALLAS        MANAGER
+SALES          CHICAGO       SALESMAN
+SALES          CHICAGO       MANAGER
+ACCOUNTING     NEW YORK      MANAGER
+RESEARCH       DALLAS        ANALYST
+ACCOUNTING     NEW YORK      PRESIDENT
+SALES          CHICAGO       SALESMAN
+RESEARCH       DALLAS        CLERK
+SALES          CHICAGO       CLERK
+RESEARCH       DALLAS        ANALYST
+ACCOUNTING     NEW YORK      CLERK
+OPERATIONS     BOSTON
+
+15 rows selected.
+
+select dname, loc, job
+  2  from emp l full join dept r
+  3  on l.deptno = r.deptno 
+  4  WHERE l.deptno IS NULL   OR r.deptno IS NULL;
+
+DNAME          LOC           JOB
+-------------- ------------- ---------
+OPERATIONS     BOSTON
+
+/*
+157) WAQTD EMPLOYEES NAME AND DEPTNAME FOR ALL THE EMPLOYEES 
+WHOSE SALARIES ARE MORE THEN 2000 ?
+
+*/
+
+select ename, dname
+  2  from emp l, dept r
+  3  on l.deptno = r.deptno
+  4  where sal > 2000;
+on l.deptno = r.deptno
+*
+ERROR at line 3:
+ORA-00933: SQL command not properly ended
+
+
+select ename, dname
+  2  from emp l, dept r
+  3  
+select ename, dname
+  2  from emp l, dept r
+  3  where l.deptno in r.deptno and sal > 2000;
+
+ENAME      DNAME
+---------- --------------
+JONES      RESEARCH
+BLAKE      SALES
+CLARK      ACCOUNTING
+SCOTT      RESEARCH
+KING       ACCOUNTING
+FORD       RESEARCH
+
+6 rows selected.
+
+select ename, dname, sal
+  2  from emp l, dept r
+  3  where l.deptno in r.deptno and sal > 2000;
+
+ENAME      DNAME                 SAL
+---------- -------------- ----------
+JONES      RESEARCH             2975
+BLAKE      SALES                2850
+CLARK      ACCOUNTING           2450
+SCOTT      RESEARCH             3000
+KING       ACCOUNTING           5000
+FORD       RESEARCH             3000
+
+6 rows selected.

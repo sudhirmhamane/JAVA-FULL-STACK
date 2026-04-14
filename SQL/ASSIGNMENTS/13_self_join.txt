@@ -1,0 +1,340 @@
+ --<<self join>>--
+ 
+ /*
+ 
+ 158) WAQTDMANAGER NAME AND THE EMPLOYEES SALARY FOR ALL THE EMPLOYEES THOSE WHO ARE WORKING IN 
+DEPTNO 10,20 ?
+ */
+ 
+ select e2.ename "mgr", e1.sal "emp"
+  2  from emp e1, emp e2
+  3  where e1.mgr in e2.empno and e1.deptno in (10,20);
+
+mgr               emp
+---------- ----------
+FORD              800
+KING             2975
+KING             2450
+JONES            3000
+SCOTT            1100
+JONES            3000
+CLARK            1300
+
+7 rows selected.
+
+ /*
+ 159) WAQTD MANAGERS MANAGER NAME FOR ALL THE MANAGER WHOSE SALARIES ARE LESS THEN EMPLOYES ?
+ */
+ 
+ select e3.ename "mgr-mgr-name" 
+  2  from emp e1, emp e2, emp e3
+  3  where e1.mgr in e2.empno and
+  4        e2.mgr in e3.empno and
+  5        e2.sal < e1.sal;
+
+mgr-mgr-na
+----------
+KING
+KING
+
+ /*
+ 160) WAQTD EMPLOYEES NAME MANAGER SALARY AND MANAGER MANAGE COMM FOR ALL THE MANAGER WHO HIRED 
+BEFORE THE 87 AS SALESMAN
+ */
+
+ select e.ename, m.ename, mm.ename
+  2  from emp e, emp m, emp mm
+  3  where e.mgr in m.empno and
+  4        m.mgr in mm.empno and
+  5   m.mgr in mm.empno and
+  6   m.hiredate < '01-JAN-87' and 
+  7  m.job in 'SALESMAN'and 
+  8  m.sal  > mm.sal;
+
+no rows selected
+
+ /*
+ 161) WAQTD ENAME AND MANAGER HIREDATE AND JOB FOR ALL THE EMPLOYEES WHO ARE WORKING IN NEW YORK
+ ?
+ */
+ select e.ename, m.hiredate, m.job
+  2  from emp e join dept d
+  3  on e.deptno in d.deptno join emp m on e.mgr in m.empno
+  4  where d.loc  = 'NEW YORK';
+
+ENAME      HIREDATE  JOB
+---------- --------- ---------
+CLARK      17-NOV-81 PRESIDENT
+MILLER     09-JUN-81 MANAGER
+
+ /*
+ 162) WAQTD EMPLOYEES DNAME AND MANAGER LOC INCLUDING EMPLOYEES SALARY AND MANAGER DEPTNO FOR AL
+L THE EMPLOYEES WHO ARE HIRED BEFORE THE MANAGERS MANAGE ?
+ */
+
+ select d1.dname, d2.loc, e1.sal, m.deptno
+  2  from emp e1, emp m, dept d1, dept d2
+  3  where e1.mgr in m.deptno and
+  4        e1.deptno in d1.deptno
+  5   and  m.deptno in d2.deptno
+  6  and   e1.hiredate < m.hiredate;
+
+no rows selected
+
+ /*
+ 163) WAQTD MANAGERS MANAGER NAME FOR ALL THE EMPLOYEES WHO ARE WORKING IN MANAGERS LOCATION AND
+ NOT WORKING IN MANAGES MANAGERS LOCATION ?
+ */
+ select mm.ename
+  2  from emp e, emp m, dept d1, dept d2, dept d3, emp mm
+  3  where e.mgr in m.empno and
+  4        m.mgr in mm.empno and
+  5        e.deptno in d1.deptno
+  6  and   m.deptno in d2.deptno
+  7  and   mm.deptno in d3.deptno
+  8  and   d1.loc = d2.loc and
+  9         d1.loc != d3.loc;
+
+ENAME
+----------
+KING
+KING
+KING
+KING
+KING
+KING
+KING
+
+7 rows selected.
+
+ /*
+ 164) WAQTD MANAGER NAME FOR THE MANAGERS MANAGER WHO ARE WORKING IN DEPTNO 20 AS ACTUAL MANAGER
+ AND EARNING SALARY MORE THEN THE EMPLOYEES ?
+ */
+ select distinct mm.ename "mgr-mgr-name"
+  2  from emp e, emp m, emp mm
+  3  where e.mgr in m.empno
+  4  and   m.mgr in mm.empno and
+  5  m.deptno = 20 and m.sal > e.sal;
+
+mgr-mgr-na
+----------
+JONES
+
+ /*
+ 165) WAQTD MANAGERS DNAME AND MANAGERS MANAGER LOC FOR THE EMPLOYEES WHO ARE WORKING IN BOSTON 
+ */
+ 
+ select d2.dname, d3.loc
+  2  from emp e, emp m, emp mm, dept d1, dept d2, dept d3
+  3  where e.mgr in m.empno and
+  4        e.deptno in d1.deptno and
+  5        m.mgr in mm.empno and
+  6        m.deptno in d2.deptno
+  7  and   mm.deptno in d3.deptno
+  8  and   d1.loc in 'BOSTON';
+
+no rows selected
+
+ /*
+ 166) WAQTD EMPLOYEES DNAME FOR THE MANAGERS MANAGER WHOSE SAL ARE MORE THAN MANAGER AND LESS TH
+AN EMPLOYEES ?
+ */
+
+ select d1.dname
+  2  from emp e, emp m, emp mm, dept d1, dept d2
+  3  where e.mgr in m.empno and
+  4        e.deptno in d1.deptno
+  5  and   m.mgr in mm.empno and
+  6        m.deptno in d2.deptno
+  7  and mm.sal > m.sal and mm.sal < e.sal;
+
+no rows selected
+
+ /*
+ 167) WAQTD EMPLOYEES LOC AND MANAGERS MANAGERS LOC FOR THE MANAGER WHO ARE HIRED BEFORE THE EMP
+LOYEE AND EARNING SALARY MORE THAN THE EMPLOYEES ?
+ */
+ 
+ select d1.loc, d2.loc
+  2  from emp e, emp m, emp mm, dept d1, dept d2
+  3  where e.mgr = m.empno
+  4  and   e.deptno = d1.deptno
+  5  and   m.mgr = mm.empno
+  6  and   mm.deptno = d2.deptno
+  7  and   m.hiredate < e.hiredate and 
+  8        m.sal > e.sal;
+
+LOC           LOC
+------------- -------------
+CHICAGO       NEW YORK
+CHICAGO       NEW YORK
+DALLAS        DALLAS
+CHICAGO       NEW YORK
+NEW YORK      NEW YORK
+
+ /*
+ 168) WAQTD MANAGERS MANAGERS MANAGER NAME FOR THE EMPLOYEES WHO ARE WORKING IN MANAGERS MANAGER
+S MANAGERS LOC AND EARNING SALARY LESS THE MANAGERS HIRED BEFORE MANAGERS MANAGERS MANAGER ?
+ */
+ select mmm.ename "mgr-mgr-mgr-name"
+  2  from emp e, emp m, emp mm, emp mmm, dept d1, dept d2, dept d3
+  3  where e.mgr      = m.empno
+  4  and   e.deptno   = d1.deptno
+  5  and   m.mgr      = mm.empno
+  6  and   m.deptno   = d2.deptno
+  7  and   mm.mgr     = mmm.empno
+  8  and   mm.deptno  = d3.deptno
+  9  and   d1.loc     = d3.loc
+ 10  and   e.sal      < m.sal
+ 11  and   m.hiredate < mmm.hiredate;
+
+no rows selected
+
+ /*
+ 169) WAQTD DNAME FOR THE EMPLOYEES WHO HIRED BEFORE  THE MANAGERS INTO ACCOUNTING DEPARTMENT IN
+ THE MONTH OF DEC ?
+ */
+ 
+ 
+ /*
+ 170) WAQTD MANAGERS MANAGERS MANAGERS MANAGER NAME IF THEY ARE HIRED AFTER THE MANAGERS INTO DA
+LLAS ?
+ */
+ 
+ select mmmm.ename "mgr-mgr-mgr-mgr-name"
+  2  from emp e, emp m, emp mm, emp mmm, emp mmmm, dept d1
+  3  where e.mgr       = m.empno
+  4  and   m.mgr       = mm.empno
+  5  and   mm.mgr      = mmm.empno
+  6  and   mmm.mgr     = mmmm.empno
+  7  and   m.deptno    = d1.deptno
+  8  and   d1.loc      = 'DALLAS'
+  9  and   e.hiredate  > m.hiredate;
+
+no rows selected
+
+ /*
+ 1) WAQTD ENAME ,LOC , AND SAL OF ALL THE EMPLOYEES EVEN IF THEY NOT ASSIGNED TO ANY DEPARTMENT 
+. WORKING AS SALESMAN AND EARNING SALARY MORE THEN 1000 ?
+ */
+ 
+ select e.ename, d.loc, e.sal
+  2  from emp e, dept d
+  3  where e.deptno = d.deptno(+)
+  4  and   e.job    = 'SALESMAN'
+  5  and   e.sal    > 1000;
+
+ENAME      LOC                  SAL
+---------- ------------- ----------
+ALLEN      CHICAGO             1600
+WARD       CHICAGO             1250
+MARTIN     CHICAGO             1250
+TURNER     CHICAGO             1500
+
+ /*
+ 2) WAQTD ENAME ,LOC ,DNAME  AND SAL OF ALL THE DEPARTMENTS EVEN IN THAT THERE IS NO EMPLOYEES A
+RE WORKING AND LOC BELONGS TO NEW YORK ?
+ */
+ 
+ select e.ename, d.loc, d.dname, e.sal
+  2  from emp e, dept d
+  3  where e.deptno(+) = d.deptno
+  4  and   d.loc       = 'NEW YORK';
+
+ENAME      LOC           DNAME                 SAL
+---------- ------------- -------------- ----------
+CLARK      NEW YORK      ACCOUNTING           2450
+KING       NEW YORK      ACCOUNTING           5000
+MILLER     NEW YORK      ACCOUNTING           1300
+
+ /*
+ 
+ 3) WAQTD ENAME ,LOC , AND DNAME ,HIREDATE  SAL OF ALL THE EMPLOYEES EVEN IF THEY NOT ASSIGNED T
+O ANY DEPARTMENT . WORKING AS SALESMAN AND WHOSE NAME STARTS WITH CONSONANTS  ?
+ 
+ */
+ 
+
+
+ /*
+ 
+ 4) WAQTD ALL THE EMPLOYEES DETAILS AND THEIR DEPARTMENT DETAILS EVEN THE EMPLOYEES ARE NOT ASSI
+GNED TO ANY LOCATION 
+ IF DEPARTMENT NAME HAVING A CHARACTERS 
+ 
+ */
+ 
+ select e.*, d.*
+  2  from emp e, dept d
+  3  where e.deptno  = d.deptno(+)
+  4  and   d.dname like '%A%';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO     DEPTNO DNAME          LOC
+---------- ---------- -------------- -------------
+      7369 SMITH      CLERK           7902 17-DEC-80        800
+        20         20 RESEARCH       DALLAS
+
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300
+        30         30 SALES          CHICAGO
+
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500
+        30         30 SALES          CHICAGO
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO     DEPTNO DNAME          LOC
+---------- ---------- -------------- -------------
+      7566 JONES      MANAGER         7839 02-APR-81       2975
+        20         20 RESEARCH       DALLAS
+
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400
+        30         30 SALES          CHICAGO
+
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
+        30         30 SALES          CHICAGO
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO     DEPTNO DNAME          LOC
+---------- ---------- -------------- -------------
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450
+        10         10 ACCOUNTING     NEW YORK
+
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000
+        20         20 RESEARCH       DALLAS
+
+      7839 KING       PRESIDENT            17-NOV-81       5000
+        10         10 ACCOUNTING     NEW YORK
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO     DEPTNO DNAME          LOC
+---------- ---------- -------------- -------------
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0
+        30         30 SALES          CHICAGO
+
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100
+        20         20 RESEARCH       DALLAS
+
+      7900 JAMES      CLERK           7698 03-DEC-81        950
+        30         30 SALES          CHICAGO
+
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
+---------- ---------- --------- ---------- --------- ---------- ----------
+    DEPTNO     DEPTNO DNAME          LOC
+---------- ---------- -------------- -------------
+      7902 FORD       ANALYST         7566 03-DEC-81       3000
+        20         20 RESEARCH       DALLAS
+
+      7934 MILLER     CLERK           7782 23-JAN-82       1300
+        10         10 ACCOUNTING     NEW YORK
+
+
+14 rows selected.

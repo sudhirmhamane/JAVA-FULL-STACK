@@ -34,6 +34,23 @@
 	is having 2 byte of memory.
 
 
+	----
+
+	Datatype Table:
+
+	byte 	  +   char 	=> 		int
+	short 	  +   char 	=> 		int
+	int 	  +   char 	=> 		int
+	long 	  +   char 	=> 		long
+	float 	  +   char 	=> 		float
+	double 	  +   char 	=> 		double
+	boolean   +   char 	=> 		C.T.E
+	char 	  +   char 	=> 		int
+
+	NOTE: We cannot store negative values by using char because, char is unsigned, 
+		it means we can store only +ve values inside char datatype.
+
+
 */
 
 class CharDemo{

@@ -4,11 +4,19 @@ class StringPractice{
 	public static void main(String [] args){
 
 		String str = "hello";
+		char[] ch = str.toCharArray();
 
-		for(int i=0; i<str.length(); i++){
-			System.out.print(str.charAt(i));
+		int i=0; int j=ch.length - 1;
+
+		while(i < j){
+			char temp = ch[i];
+			ch[i] = ch[j];
+			ch[j] = temp;
+
+			i++;
+			j--;
 		}
-		System.out.println();
+		System.out.println(new String(ch));
 	}
 
 }

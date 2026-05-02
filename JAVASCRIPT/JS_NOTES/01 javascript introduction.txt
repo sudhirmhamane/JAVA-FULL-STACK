@@ -122,9 +122,9 @@ Tokens are smallest unit in programming language.
 
 Types of Tokens:
 
-Keywords, 
-identifiers, 
-operators, 
+Keywords,
+identifiers,
+operators,
 separators,
 literals
 
@@ -142,60 +142,152 @@ Literals are classified into two types,
 
 1. Primitive Datatypes:
 
-a. Number Datatype
+	a. Number Datatype
+
+		var a = 10;
+		console.log(a);
+
+	b. Boolean Datatype
+
+		var b = true;
+		console.log(b);
+
+	c. Undefined Datatype
+
+		var c;
+		console.log(a);
+
+	d. Null Datatype
+
+		var d = null;
+		console.log(d);
+
+	e. String Datatype
+
+		var e = "hello";
+		console.log(e);
+
+		var e1 = 'Hello';
+		console.log(e);
+
+		var e2 = `hello`;
+		console.log(e);
+
+	f. BigInt Datatype
+	
+		var f = 384573479342039482309n;
+		console.log(d);
+
+
+
+	g. Symbol Datatype
+
+		var g = Symbol("hello");
+
+
+## Variable
+
+It is container used to store a data.
+
+In JS variable is created by using three keywords
+called var, let, const.
+
+### Syntax:
 
 var a = 10;
-console.log(a);
 
-b. Boolean Datatype
+var	-> keyword
+a 	-> identifier
+10 	-> data
 
-var b = true;
-console.log(b);
+## Difference Between var, let and const
 
-c. Undefined Datatype
 
-var c;
-console.log(a);
+	Declaration		Declaration		Updation		Re-Declaration
+				Intilization					Re-Intilization
 
-d. Null Datatype
+var 	true			true			true			true
 
-var d = null;
-console.log(d);
+let 	true			true			true			false
 
-e. String Datatype
-
-var e = "hello";
-console.log(e);
-
-var e1 = 'Hello';
-console.log(e);
-
-var e2 = `hello`;
-console.log(e);
+const	false			true			false			false
 
 
 
+# var
+
+## Declaration
+
+var a;
+console.log(a)
+
+## Declartion and Intilization
+
+var a = 10;
+clg(a)
+
+##Updation
+
+a = "Hello"
+clg(a)
 
 
+## Redeclartion and Re-Intilization
+
+var a = 100;
+clg(a)
+
+---
 
 
+## let
+
+## declaration
+let a;
+clg(a)
+
+## Declartion and Intilization
+let a = 100;
+clg(a);
 
 
+##Updation
+
+a = 200
+clg(a);
 
 
+## Redeclartion and Re-Intilization is not possible
+
+let a = 100
+clg(a);
+let a = 200
+clg(a) // error
 
 
+---
+
+const:
+
+## declaration not possible
+const a;
+clg(a)
+
+## Declartion and Intilization
+const a = 100;
+clg(a);
 
 
+##Updation not possible
+
+a = 200
+clg(a);
 
 
+## Redeclartion and Re-Intilization is not possible
 
 
-
-
-
-
-
-
-
-
+const a = 100
+clg(a);
+const a = 200
+clg(a) // error

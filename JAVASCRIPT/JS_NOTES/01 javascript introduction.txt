@@ -1,0 +1,201 @@
+================================================================
+        JS COURSE - CHAPTER 01 : INTRODUCTION TO JAVASCRIPT
+================================================================
+
+----------------------------------------------------------------
+  HISTORY
+----------------------------------------------------------------
+
+JS was introduced in 1995 by Brendan Eich within 10 days
+while he was working at Netscape Corporation.
+
+Name History:
+  Mocha  -->  LiveScript  -->  JavaScript (final)
+
+It is maintained by a company called ECMA
+(European Computer Manufacturers Association).
+
+The standard version of JS is ES6 (also called ES2015).
+
+ES6 contains features like:
+  - Promises
+  - Destructuring
+  - Arrow Functions
+  - let and const
+  - Template Literals
+  - Classes and Modules
+
+----------------------------------------------------------------
+  WHAT IS JS USED FOR?
+----------------------------------------------------------------
+
+JS is used to give functionality to webpages and make them
+interactive.
+
+JS is used for both Server Side and Client Side Rendering.
+
+## What is Server Side Rendering (SSR)?
+   It is a technique where the HTML is loaded from the server.
+
+## What is Client Side Rendering (CSR)?
+   It is a technique where the HTML page can be changed by
+   the client (user) on the browser.
+   Here JS is loaded and executed on the Browser.
+
+----------------------------------------------------------------
+  WHAT IS JAVASCRIPT?
+----------------------------------------------------------------
+
+JS is a:
+  - High Level
+  - Object Oriented
+  - Object Based
+  - Dynamic
+  - Loosely Typed
+  - Platform Independent
+  ...programming language.
+
+To execute JS code we need a browser that contains a JS Engine.
+The JS Engine is responsible for executing JS code in the browser.
+Different browsers contain different JS engines.
+
+  EX:
+    Chrome         ->  V8
+    Firefox        ->  SpiderMonkey
+    Microsoft Edge ->  V8  (previously Chakra)
+    Safari         ->  JavaScriptCore
+
+To execute JS outside the browser we need NODE.JS
+It is a Runtime Environment for JS.
+
+----------------------------------------------------------------
+  JS ENGINE FLOW
+----------------------------------------------------------------
+
+  Source Code
+      |
+      v
+  Parsing  (code gets divided into small tokens)
+      |
+      v
+  AST - Abstract Syntax Tree
+      |
+      v
+  JIT - Just In Time  (Compiler + Interpreter)
+      |
+      v
+  Machine Code
+
+----------------------------------------------------------------
+  DIFFERENCE BETWEEN var, let AND const
+----------------------------------------------------------------
+
+  +----------------+-----------+-----------+-----------+
+  |   Property     |    var    |    let    |   const   |
+  +----------------+-----------+-----------+-----------+
+  | Scope          | Function  |   Block   |   Block   |
+  | Hoisting       | Yes       |   TDZ*    |   TDZ*    |
+  | Re-declare     | Yes       |   No      |   No      |
+  | Re-assign      | Yes       |   Yes     |   No      |
+  | Attaches to    | Yes       |   No      |   No      |
+  | global object  |           |           |           |
+  +----------------+-----------+-----------+-----------+
+
+  * TDZ = Temporal Dead Zone
+    (variable exists but cannot be accessed before declaration)
+
+  WHEN TO USE:
+    const  ->  use by default (value won't change)
+    let    ->  use when value needs to change
+    var    ->  avoid in modern JS
+
+================================================================
+  NOTE: ECMA = European Computer Manufacturers Association
+================================================================
+
+1/5/26
+
+
+Tokens:
+
+Tokens are smallest unit in programming language.
+
+Types of Tokens:
+
+Keywords, 
+identifiers, 
+operators, 
+separators,
+literals
+
+
+Literals:
+
+Literals Means value or data.
+
+Literals are classified into two types,
+
+1. Primitive Literals
+2. Non-Primitive Literals
+
+---
+
+1. Primitive Datatypes:
+
+a. Number Datatype
+
+var a = 10;
+console.log(a);
+
+b. Boolean Datatype
+
+var b = true;
+console.log(b);
+
+c. Undefined Datatype
+
+var c;
+console.log(a);
+
+d. Null Datatype
+
+var d = null;
+console.log(d);
+
+e. String Datatype
+
+var e = "hello";
+console.log(e);
+
+var e1 = 'Hello';
+console.log(e);
+
+var e2 = `hello`;
+console.log(e);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

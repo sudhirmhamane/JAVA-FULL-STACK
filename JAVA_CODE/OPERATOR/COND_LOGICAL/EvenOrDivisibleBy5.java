@@ -16,5 +16,6 @@ class EvenOrDivisibleBy5{
 		
 		String res = (num % 2 == 0 || num % 5 == 0) ? "Yes" : "NO";
 		System.out.println(res);
+		sc.close();
 	}
 }

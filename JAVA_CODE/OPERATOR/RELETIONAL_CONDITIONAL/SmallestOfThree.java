@@ -1,6 +1,6 @@
 // 18)Smallest of Three Numbers 
 
-class SmallestOfThree{
+class cl{
 	public static void main(String [] args){
 
 		int a = 10, b = 20, c = 30;

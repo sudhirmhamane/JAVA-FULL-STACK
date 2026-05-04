@@ -23,11 +23,11 @@ class LargestOfFour{
 	
 		int swap = last * 10000000 + mid * 10 + first;
 		System.out.println(swap);
-
+		sc.close();
 		
-		System.out.println("Enter any two numbers: ");
-		int num1 = sc.nextInt(); // 6
-		int num2 = sc.nextInt(); // 3  3
+		// System.out.println("Enter any two numbers: ");
+		// int num1 = sc.nextInt(); // 6
+		// int num2 = sc.nextInt(); // 3  3
 
 		// int sub = (num1/num2)/(num1/num2);
 		// System.out.println(sub);

@@ -8,6 +8,8 @@ class CheckEvenWithoutMod{
 		//int num = sc.nextInt();
 		int num = 20;
 	
-		System.out.println((num * 2)/2);
+		System.out.println((num /2)/2);
+		num-
 	}
 }
+

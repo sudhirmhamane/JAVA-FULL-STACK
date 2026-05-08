@@ -11,6 +11,7 @@ class MarksClassification
 		
 		int marks = sc.nextInt();
 
+		sc.close();
 		if(marks < 35)
 			System.out.println("Fail");
 		else if(marks < 60)

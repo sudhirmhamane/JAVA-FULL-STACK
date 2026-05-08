@@ -8,6 +8,7 @@ class Loan{
 		System.out.println("Enter Salary: ");
 		int salary = sc.nextInt();
 		
+		sc.close();
 		if(salary <= 18000){
 			System.out.println("40000 RS Loan can get");
 		} else if(salary <= 30000){

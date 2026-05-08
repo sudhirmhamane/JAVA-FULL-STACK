@@ -9,6 +9,7 @@ class InternetSpeed
 		System.out.println("Enter Speed in MBPS: ");
 		int speed = sc.nextInt();
 
+		sc.close();
 		if(speed <= 2)
 			System.out.println("Slow");
 		else if(speed <= 5)

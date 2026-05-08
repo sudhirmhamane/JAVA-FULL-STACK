@@ -8,6 +8,7 @@ class CheckCharacters
 		System.out.println("Enter Character: ");
 		char ch = sc.next().charAt(0);
 
+		sc.close();
 		if(ch >= 'A' && ch <= 'Z')
 			System.out.println("Uppercase");
 		else if(ch >= 'a' && ch <= 'z')

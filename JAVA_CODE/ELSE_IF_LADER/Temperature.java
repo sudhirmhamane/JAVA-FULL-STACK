@@ -8,6 +8,7 @@ class Temperature {
 		
 		int temp = sc.nextInt();
 
+		sc.close();
 		if(temp < 10){
 			System.out.println("Cold");
 		}

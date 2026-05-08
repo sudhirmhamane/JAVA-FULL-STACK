@@ -7,6 +7,8 @@ class RatingsOnScore {
 		System.out.println("Enter Score: ");
 		int score = sc.nextInt();
 
+
+		sc.close();
 		if(score >= 90){
 			System.out.println("Excellent");
 		}

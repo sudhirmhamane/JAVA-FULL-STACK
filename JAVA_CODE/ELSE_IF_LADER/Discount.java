@@ -8,6 +8,7 @@ class Discount{
 		System.out.println("enter amount: ");
 		double amount = sc.nextDouble();
 
+		sc.close();
 		if(amount >= 5000){
 			 System.out.println("20% Discount");
 		}

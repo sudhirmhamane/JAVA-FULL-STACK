@@ -10,6 +10,7 @@ class  IncomeTax
 		System.out.println("Enter yearly sal: ");
 		int salPA = sc.nextInt();
 		
+		sc.close();
 		if(salPA <= 250000){
 			System.out.println("No tax");
 		} else if(salPA <= 500000){

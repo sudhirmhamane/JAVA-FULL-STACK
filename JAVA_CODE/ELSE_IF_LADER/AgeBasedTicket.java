@@ -8,6 +8,7 @@ class AgeBasedTicket
 		System.out.println("Enter Age: ");
 		int age = sc.nextInt();
 
+		sc.close();
 		if(age < 12)
 			System.out.println("Child Ticket");
 		else if(age <= 60)

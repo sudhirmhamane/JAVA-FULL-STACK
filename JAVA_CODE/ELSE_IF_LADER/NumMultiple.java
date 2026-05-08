@@ -10,6 +10,7 @@ class NumMultiple
 		
 		int n = sc.nextInt();
 
+		sc.close();
 		if(n % 2 == 0)
 			System.out.println("Multiple of 2");
 		else if(n % 3 == 0)

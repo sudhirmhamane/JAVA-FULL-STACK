@@ -8,6 +8,7 @@ class ElectricalBill {
 		System.out.println("Enter Units: ");
 		int units = sc.nextInt();
 		
+		sc.close();
 		if(units <= 100){
 			System.out.println("Low Bill");
 		}else if(units <= 300){

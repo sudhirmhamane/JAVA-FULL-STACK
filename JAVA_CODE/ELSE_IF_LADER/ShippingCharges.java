@@ -8,6 +8,7 @@ class ShippingCharges{
 		System.out.println("Enter Weight: ");
 		int weight = sc.nextInt();
 		
+		sc.close();
 		if(weight <= 5){
 			System.out.println("shipping charges: 45 per Kg");
 		} else if(weight <= 15){

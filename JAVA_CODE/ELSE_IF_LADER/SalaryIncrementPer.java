@@ -9,6 +9,7 @@ class SalaryIncrementPer
 		System.out.println("Enter Performance Ratings(out of 10): ");
 		int ratings = sc.nextInt();
 		
+		sc.close();
 		if(ratings <= 3){
 			System.out.println("salary increment percentage is: 20%");
 		} else if(ratings <= 5){

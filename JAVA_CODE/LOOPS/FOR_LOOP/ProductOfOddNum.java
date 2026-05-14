@@ -14,5 +14,6 @@ class ProductOfOddNum{
 			}
 		}
 		System.out.println("product of odd num: " + p);
+		sc.close();
 	}
 }

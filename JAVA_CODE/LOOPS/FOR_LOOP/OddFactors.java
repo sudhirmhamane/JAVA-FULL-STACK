@@ -14,5 +14,6 @@ class OddFactors{
 			}
 		}
 		System.out.println("Sum of odd factors: " + sum);
+		sc.close();
 	}
 }

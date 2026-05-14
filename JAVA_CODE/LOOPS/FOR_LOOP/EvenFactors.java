@@ -14,5 +14,6 @@ class EvenFactors{
 			}
 		}
 		System.out.println("Sum of event factors: " + sum);
+		sc.close();
 	}
 }

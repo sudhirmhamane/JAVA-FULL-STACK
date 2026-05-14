@@ -14,5 +14,6 @@ class ProductOfEvenNum{
 			}
 		}
 		System.out.println("product of even: " + p);
+		sc.close();
 	}
 }

@@ -14,5 +14,6 @@ class ProductFactors{
 			}
 		}
 		System.out.println("product of factors: " + p);
+		sc.close();
 	}
 }

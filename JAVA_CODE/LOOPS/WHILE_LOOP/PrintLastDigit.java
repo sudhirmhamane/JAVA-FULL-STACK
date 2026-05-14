@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class  {
+class Ld{
 
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
@@ -15,6 +15,7 @@ class  {
 			System.out.println("last digit: " + ld);
 			num /= 10;
 		}
+		sc.close();
 				
 	}
 

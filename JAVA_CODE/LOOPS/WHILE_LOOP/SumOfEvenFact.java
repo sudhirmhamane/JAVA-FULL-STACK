@@ -1,20 +1,21 @@
 import java.util.Scanner;
-class Reverse{
+class SumOfEvenFact{
 
 	public static void main(String [] args){
 			
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter num: ");
 		int num = sc.nextInt();
-		int ld  = 0;
-		int rev = 0;
+		int sum = 0;
+		int i = 1;
 	
-		while(num != 0){
-			ld = num % 10;
-			rev = rev * 10 + ld;
-			num /= 10;			
+		while(i <= num){
+			if((num % i == 0) && (i %2 == 0)){
+				sum += i;
+			}
+			i++;			
 		}
-		System.out.println("rev is: " + rev);
+		System.out.println("sum is: " + sum);
 		sc.close();
 	}
 }

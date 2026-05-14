@@ -20,5 +20,6 @@ class Palindrome{
 		} else {
 			System.out.println("Not");
 		}
+		sc.close();
 	}
 }

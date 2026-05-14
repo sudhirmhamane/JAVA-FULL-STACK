@@ -20,7 +20,7 @@ class SumOfOddNum{
 		}
 		
 		System.out.println("Sum: " + sum);
-		
+		sc.close();
 	}
 
 }

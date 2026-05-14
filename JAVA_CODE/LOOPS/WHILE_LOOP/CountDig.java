@@ -13,5 +13,6 @@ class CountDig{
 			num /= 10;			
 		}
 		System.out.println("count is: " + count);
+		sc.close();
 	}
 }

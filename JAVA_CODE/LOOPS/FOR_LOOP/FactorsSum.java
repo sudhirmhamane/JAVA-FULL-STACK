@@ -12,7 +12,7 @@ class FactorsSum{
 			if(num % i == 0){
 				sum += i;
 			}
-		}
+		} sc.close();
 		System.out.println("Sum of factors of given num is: " + sum);
 	}
 }

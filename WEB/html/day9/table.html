@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tables</title>
+  </head>
+  <body>
+    <!-- Table inside HTML 
+        We use multiple tags to make the table appearance look good,
+
+        1. for creating a table inside html we use <table></table> tag.
+        2. we use the caption tag to give the name to table.
+        3. tr(table row) tag is used to create rows in table.
+        4. td(table data) tag is used to write the content insid the tabke cell.
+        5. th(table heading) tag is used to make the first row bold and align center, so it looks like a table heading.
+        6. thead(table head) we wrap the heading inside the thead tag
+        7. tbody(table body) we wrap the body part inside this tag.
+        8. tfoot(table footer) we wrap the last row or the footer.
+
+    
+    -->
+    <table border="1" cellspadding="10">
+      <caption>
+        Emp Table
+      </caption>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>sal</th>
+          <th>dept</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Smith</td>
+          <td>900</td>
+          <td>Sales</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>Alice</td>
+          <td>1000</td>
+          <td>Hr</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td>3</td>
+          <td>Miller</td>
+          <td>850</td>
+          <td>Analyst</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

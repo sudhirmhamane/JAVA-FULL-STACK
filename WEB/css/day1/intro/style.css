@@ -1,0 +1,6 @@
+/* css written inside the css file is known as external css.  */
+p {
+  height: 100px;
+  background: rgb(3, 37, 209);
+  width: 100px;
+}

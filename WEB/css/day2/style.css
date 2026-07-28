@@ -1,0 +1,47 @@
+ div{
+    height: 100px;
+    width: 100px;
+    background: rgb(255, 255, 0);
+    border: solid;
+    /* display: inline;
+    display: inline-block; */
+}
+
+.d1{
+    display: none;
+}
+
+span{
+    height: 100px;
+    width: 100px;
+    background: rgb(64, 0, 255);
+    border: solid;
+    /* display: none; */
+    /* display: block; 
+    display: inline-block; */
+
+} 
+
+.s1{
+    display: none;
+}
+
+main{
+    height: 400px;
+    background-color: red;
+    display: flex;
+    
+    /* justify-content: start; */
+    /* justify-content: end; */
+    /* justify-content: center; */
+    /* justify-content: left; */
+    /* justify-content: right; */
+    justify-content: space-between;
+    /* justify-content: space-around; */
+    /* justify-content: space-evenly; */
+
+    /* align-items: start; */
+    /* align-items: center; */
+    /* align-items: end; */
+
+}

@@ -1,0 +1,46 @@
+*{
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box{
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    animation: box;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-out;
+
+}
+
+@keyframes box {
+    33%{
+        background: orange;
+        transform:rotate(90deg) scale(1.5) translate(100px, 100px);
+        border-radius: 15%;
+    }
+    33%{
+        background-color: aliceblue;
+        transform:rotate(180deg) scale(2) translate(100px, 100px);;
+        
+        border-radius: 25%;
+    }
+    33%{
+        background-color: green;
+        transform:rotate(360deg) scale(2.5) translate(100px, 100px);
+        border-radius: 50%;
+    }
+    
+
+}

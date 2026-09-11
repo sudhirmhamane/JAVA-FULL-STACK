@@ -1,0 +1,36 @@
+*{
+    font-family: serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+#container{
+    height: 100vh;
+    width: 100%;
+    border: 3px solid white;
+    display: flex;
+    justify-content: space-around;
+}
+
+.box{
+    height: 300px;
+    width: 300px;
+    border: 4px solid red;
+}
+
+@media (max-width:450px) {
+    body{
+        background-color: #16fb06;
+    }
+    #container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}

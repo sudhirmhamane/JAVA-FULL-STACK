@@ -1,0 +1,16 @@
+main{
+    width: 900px;
+    height: 500px;
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+
+}
+
+div{
+    height: 100px;
+    width: 300px;
+    background: yellow;
+    border:2px solid black;
+}

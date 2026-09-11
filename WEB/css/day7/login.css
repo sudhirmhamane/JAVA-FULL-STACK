@@ -1,0 +1,86 @@
+* {
+  font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+#container{
+    height: 100vh;
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-section{
+    height: 560px;
+    width: 400px;
+    border: 2px solid;
+    border-radius: 15px;
+    overflow: hidden;
+
+}
+
+.card2{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+    align-items: center;
+    background-color: rgb(17, 179, 6);
+    justify-content: start;
+    
+
+}
+.card2 h4{
+    font-size: 24px;
+    font-weight: 800px;
+    margin-top: 5px;
+    color: white;
+}
+.card2 p{
+    font-size: 15px;
+    font-weight: 600px;
+    margin-top: 5px;
+    color: white;
+    
+}
+
+.input{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+.input>label{
+    color: white;
+    font: 14px;
+    font-weight: 500;
+    font: bold;
+}
+
+.input>input{
+    margin-top: -5px;
+    border-radius: 10px;
+    border: none;
+    color: rebeccapurple;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+#login{
+    height: 5vh;
+    width: 10vw;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: none;
+    color: rebeccapurple;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}

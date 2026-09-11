@@ -1,0 +1,74 @@
+* {
+  font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+/* body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+ #box-container {
+  height: 600px;
+  border: 2px solid;
+  position: relative;
+}
+#box1 {
+  height: 200px;
+  width: 200px;
+  background-color: black;
+  /* it is a default position and we cannot move the static html element */
+  /* position: static; */
+  /* position: relative; */
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  /* z-index: 1; */
+}
+
+#box2 {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(243, 0, 247);
+  position: absolute;
+  top: 150px;
+  left: 150px;
+}
+
+/* /* it is a default position and we cannot move the static html element */
+/* position: static;
+    
+    it come out of document and move anyhwhere in the page but is do not leave the original position
+    position: relative;
+ */
+
+
+
+#box3 {
+  height: 200px;
+  width: 200px;
+  background-color: green;
+  position: absolute;
+  left: 200px;
+  top: 200px;
+}
+
+#box4 {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(255, 42, 0);
+  position: absolute;
+  left: 250px;
+  top: 250px;
+  z-index: -1;
+}
+
+#container {
+  height: 200px;
+  background-color: yellow;
+}
+
+

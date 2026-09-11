@@ -1,0 +1,29 @@
+*{
+    font-family: serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+div{
+    height: 400px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 50%;
+    /* background-image: url(./13.png); */
+    background-size: contain;
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: linear-gradient(red, yellow, green, black,white);
+    background-image: radial-gradient(red, yellow, green, rgb(42, 55, 208),white);
+    background-image: conic-gradient(red, yellow, green, rgb(42, 55, 208),white);
+
+}

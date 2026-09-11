@@ -1,0 +1,168 @@
+*{
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    height: 7vh;
+    /* border: 2px solid black; */
+    background-color: rgb(129, 164, 213);
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(84, 75, 75);
+}
+
+
+.navsec1{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.navsec2{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.navsec3{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+
+aside{
+    width: 4vw;
+    height: 88vh;
+    background-color: rgb(160, 189, 231);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+iframe{
+    height: 88vh;
+}
+
+.sideSec1{
+    font-size: 22px;
+}
+
+.sideSec2{
+    font-size: 22px;
+}
+
+.upside{
+    margin: 15px;
+}
+
+.downside{
+    margin: 15px;
+}
+
+main{
+    display: flex;
+}
+
+.mainSec1{
+    width: 48vw;
+    height: 88vh;
+    background: #eac2c2;
+    border-right: 2px solid gray;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainNavsec1,.mainNavsec2{
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+}
+
+
+
+.mainSec2{
+    width: 48vw;
+    height: 88vh;
+    background: #eac2c2;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+footer{
+    height: 5vh;
+    border-top: 2px solid rgb(84, 75, 75);
+    background-color: rgb(160, 189, 231);
+    display: flex;
+    justify-content: space-between;
+}
+
+.footersec1{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.footersec2{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+img{
+    width: 26px;
+    height: 26px;
+}
+
+.arrow{
+    width: 20px;
+    height: 20px;
+}
+
+.search-bar{
+    display: flex;
+}
+
+#search{
+    width: 20vw;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 4.5vh;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.search-bar img{
+    height: 20px;
+    width: 20px;
+    margin: 5px;
+}
+
+input{
+    background-color: gray;
+    
+}
+
+::placeholder{
+      color: rgb(216, 204, 204);
+      font-size: 20px;
+      opacity: 0.6;
+      padding: 10px;
+
+}

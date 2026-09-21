@@ -5,10 +5,11 @@ public class PrintSpaces {
     }
 
     public static void printLowerCase(String s){
+        char[] ch  = s.toCharArray();
         int count=0;
-        for(int i=0; i<s.length(); i++){
-            char ch = s.charAt(i);
-            if(ch == ' '){
+        for(int i=0; i<ch.length; i++){
+            
+            if(ch[i] == ' '){
                 count++;
             }
         }

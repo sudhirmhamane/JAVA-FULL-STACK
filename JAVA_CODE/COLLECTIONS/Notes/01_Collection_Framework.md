@@ -108,4 +108,3 @@ These classes were inconsistent and there was no any common parent interace of t
 5. Dynamic Sizing
 6. Rich data structure and in build algorithm support
 7. InterOperability: different types of collection object can works easily.
-
